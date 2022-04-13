@@ -1,0 +1,77 @@
+* {
+	box-sizing: border-box;
+}
+.container {
+	margin-top: 60px;
+}
+.build_the_resume {
+	width: 450px;
+	color: #23476f;
+	font-size: 46px;
+	font-weight: 800;
+	line-height: 50px;
+	margin: 0 auto 1rem;
+	max-width: 672px;
+	display: flex;
+	text-align: center;
+}
+.subtitle {
+	margin: 0 auto;
+	padding-top: 20px;
+	width: 530px;
+}
+.jumbotron__subtitle {
+	color: #52626d;
+	font-family: Cooper Hewitt, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
+.flex_end {
+    height:200px ;
+	display: flex;
+    text-align: end;
+	justify-content: center;
+	flex-direction: column;
+}
+.flex_start {
+	display: flex;
+    text-align: start;
+	justify-content: center;
+	flex-direction: column;
+}
+.wrapper__advantages {
+	margin: 0 auto;
+	width: 1100px;
+	padding-top: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.resume_img{
+    
+    position: absolute;
+    top: 550px;
+    left: 32%;
+}
+.resume_img img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 550px;
+}
+.advantages {
+	margin-top: 200px;
+}
+.jumbotron__advantages {
+	background: #e5edf2;
+	height: 350px;
+    margin-bottom: 50px;
+}
+.jumbotron__advantages__text {
+	width: 250px;
+	color: #2298e9;
+	font-weight: 700;
+}
+.jumbotron__advantages__p {
+	width: 250px;
+}

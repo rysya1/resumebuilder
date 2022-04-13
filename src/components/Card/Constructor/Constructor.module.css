@@ -1,0 +1,23 @@
+.container{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+.constructor{
+    color: white;
+    background-color: #ff514e;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 32px;
+    height: 60px;
+    width: 350px;
+    text-align: center;
+}
+.icon_construct{
+    margin-right: 43px;
+    width: 19px;
+}
+.cta{
+    
+}

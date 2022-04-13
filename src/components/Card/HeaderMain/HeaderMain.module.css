@@ -1,0 +1,13 @@
+.header{
+    background-color: white;
+    width: 100%;
+}
+.main_name{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+}
+.header_div{
+    margin: 0 auto;
+    width: 1040px;
+}
