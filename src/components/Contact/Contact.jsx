@@ -23,6 +23,9 @@ const Contact = () => {
 			<GlobalStyle />
 			<HeaderMain />
 			<div className={classes.container}>
+			<div className={classes.contactH1}>
+					<h1>Контакты</h1>
+				</div>
 				<div>
 					<span className={classes.Ltsbz}>
 						Расскажите нам немного о себе
@@ -62,13 +65,14 @@ const Contact = () => {
 					<div className={classes.d_flex}>
 						<div className={classes.email}>
 							<p>Эл. адрес</p>
-							<input type='email' />
+							<input required type='email' />
 						</div>
 						<div className={classes.phone}>
 							<p>Телефон</p>
 							<input type='text' />
 						</div>
 					</div>
+					
 					<div className={classes.buttons}>
 						<button onClick={main} className={classes.logout}>
 							<p>НАЗАД</p>

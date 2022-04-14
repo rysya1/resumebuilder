@@ -80,6 +80,7 @@
 	width: 600px;
 	display: flex;
 	justify-content: space-between;
+    padding-bottom: 30px;
 }
 .logout {
 	border-radius: 2px;
@@ -116,7 +117,6 @@
 }
 .d_flex_date{
     margin-top: 20px;
-    /* width: 380px; */
     display: flex;
     justify-content: space-between;
 }
@@ -130,6 +130,7 @@
     display: flex;
 }
 .date{
+    cursor: pointer;
     width: 295px;
     height: 40px;
 }
@@ -140,4 +141,31 @@
     
     width: 17px;
     height: 17px;
+}
+.pAndTextArea{
+    margin: 0;
+}
+.pAndTextArea textarea{
+    max-width: 600px;
+    min-width: 600px;
+    min-height: 160px;
+    max-height: 100px;
+    width: 600px;height: 200px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    padding: 16.5px 18.5px 12.5px 18.5px;
+    z-index: 1;
+    outline: none;
+}
+.pAndTextArea textarea:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.pAndTextArea p{
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    /* font-size: small; */
+	font-weight: 700;
 }

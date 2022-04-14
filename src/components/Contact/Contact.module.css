@@ -5,6 +5,11 @@
     margin-top: 40px;
     margin-left: 180px;
 }
+.contactH1 h1 {
+	font-size: 36px;
+	padding: 0;
+    margin: 0;
+}
 .Ltsbz {
     color: rgb(30, 32, 33);
     display: inline-block;

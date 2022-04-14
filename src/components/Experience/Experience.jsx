@@ -57,6 +57,10 @@ const Experience = () => {
 							</div>
 						</div>
 					</div>
+                    <div className={classes.pAndTextArea}>
+						<p>Описание</p>
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+					</div>
 				</div>
 				<div className={classes.buttons}>
 					<button className={classes.logout} onClick={experienceTips}>
