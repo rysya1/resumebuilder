@@ -15,6 +15,9 @@ const Contact = () => {
 	const main = () => {
 		navigate('/')
 	}
+	const experienceTips = () => {
+		navigate('/experiencetips')
+	}
 	return (
 		<>
 			<GlobalStyle />
@@ -70,7 +73,7 @@ const Contact = () => {
 						<button onClick={main} className={classes.logout}>
 							<p>НАЗАД</p>
 						</button>
-						<button className={classes.next}>
+						<button className={classes.next} onClick={experienceTips}>
 							<p> ДАЛЕЕ</p>
 						</button>
 					</div>
