@@ -56,7 +56,7 @@
 	border: none;
 	width: 200px;
 	color: white;
-	background-color: #fd625f;
+	background-color: #ff514f;
 	cursor: pointer;
 }
 .logout p {
@@ -68,5 +68,5 @@
 	font-weight: 900;
 }
 .next:hover {
-	background-color: #fe807e;
+	background-color: #fd6f6c;
 }

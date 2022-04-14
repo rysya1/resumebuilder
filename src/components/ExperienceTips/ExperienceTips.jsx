@@ -13,6 +13,9 @@ const ExperienceTips = () => {
 	const contact = () => {
 		navigate('/contact')
 	}
+	const experience = () => {
+		navigate('/experience')
+	}
 	return (
 		<div>
 			<HeaderMain />
@@ -27,13 +30,16 @@ const ExperienceTips = () => {
 						{/* <img src="https://img.icons8.com/color/48/E74C3C/1-circle-c--v2.png"/> */}
 						<img src='https://img.icons8.com/color/48/000000/1-cute.png' />
 						<span>
-						Опыт работы обычно является самым важным разделом во всем вашем резюме.
+							Опыт работы обычно является самым важным разделом во
+							всем вашем резюме.
 						</span>
 					</li>
 					<li className={classes.tips_item}>
 						<img src='https://img.icons8.com/color/48/000000/2-cute.png' />
 						<span>
-						Здесь рекрутеры будут искать доказательства, демонстрирующие, что у вас есть все необходимое для работы.
+							Здесь рекрутеры будут искать доказательства,
+							демонстрирующие, что у вас есть все необходимое для
+							работы.
 						</span>
 					</li>
 					<li className={classes.tips_item}>
@@ -48,7 +54,7 @@ const ExperienceTips = () => {
 					<button onClick={contact} className={classes.logout}>
 						<p>НАЗАД</p>
 					</button>
-					<button className={classes.next}>
+					<button className={classes.next} onClick={experience}>
 						<p> ДАЛЕЕ</p>
 					</button>
 				</div>

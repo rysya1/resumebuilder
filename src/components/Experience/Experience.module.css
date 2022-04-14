@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+}
+.container {
+	padding-top: 40px;
+	margin-left: 180px;
+	width: 600px;
+	color: #333;
+}
+.experience_text{
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+.experience_text h1 {
+	font-size: 36px;
+	padding: 0;
+    margin: 0;
+}
+.pAndInput{
+    margin: 0;
+}
+.pAndInput input{
+    width: 600px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    padding: 16.5px 18.5px 12.5px 18.5px;
+    z-index: 1;
+    outline: none;
+}
+.pAndInput input:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.d_flex{
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+.city input{
+    width: 350px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    outline: none;
+}
+.city input:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.city p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.pAndInput p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.state input{
+    width: 240px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    outline: none;
+}
+.state input:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.state p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+
+.buttons {
+	padding-top: 30px;
+	width: 600px;
+	display: flex;
+	justify-content: space-between;
+}
+.logout {
+	border-radius: 2px;
+	border: none;
+	color: rgb(57, 57, 57);
+	background-color: rgb(192, 191, 191);
+	width: 200px;
+	height: 45px;
+	cursor: pointer;
+}
+.logout:hover {
+	background-color: rgb(160, 160, 160);
+}
+.next {
+	border-radius: 2px;
+	height: 45px;
+	border: none;
+	width: 200px;
+	color: white;
+	background-color: #ff514f;
+	cursor: pointer;
+}
+.logout p {
+	font-size: small;
+	font-weight: 900;
+}
+.next p {
+    
+	font-size: small;
+	font-weight: 900;
+}
+.next:hover {
+	background-color: #fd6f6c;
+}
+.d_flex_date{
+    margin-top: 20px;
+    /* width: 380px; */
+    display: flex;
+    justify-content: space-between;
+}
+.d_flex_date p{
+    font-weight: 400;
+    padding-bottom: 5px;
+    margin: 0;
+}
+.checkbox_style{
+    margin-top: 3px;
+    display: flex;
+}
+.date{
+    width: 295px;
+    height: 40px;
+}
+.checkbox_style font{
+    font-weight: 600;
+}
+.checkbox_style input{
+    
+    width: 17px;
+    height: 17px;
+}

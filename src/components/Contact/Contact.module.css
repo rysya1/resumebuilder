@@ -51,9 +51,15 @@
     border-radius: 3px;
 }
 .city p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
     font-weight: 700;
 }
 .pAndInput p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
     font-weight: 700;
 }
 .state input{
@@ -67,6 +73,9 @@
     border-radius: 3px;
 }
 .state p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
     font-weight: 700;
 }
 .Zipcode input{
@@ -76,6 +85,9 @@
     outline: none;
 }
 .Zipcode p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
     font-weight: 700;
 }
 .email input{
@@ -89,6 +101,9 @@
     border-radius: 3px;
 }
 .email p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
     font-weight: 700;
 }
 
@@ -103,6 +118,9 @@
     border-radius: 3px;
 }
 .phone p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
     font-weight: 700;
 }
 .buttons{
@@ -129,7 +147,7 @@
     border: none;
     width: 200px;
     color: white;
-    background-color: #fd625f;
+    background-color: #ff514f;
     cursor: pointer;
 }
 .logout p{
@@ -141,5 +159,5 @@
     font-weight: 900;
 }
 .next:hover{
-    background-color: #fe807e;
+    background-color: #fd6f6c;
 }
