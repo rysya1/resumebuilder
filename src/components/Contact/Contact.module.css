@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    margin-top: 40px;
+    margin-left: 180px;
+}
+.Ltsbz {
+    color: rgb(30, 32, 33);
+    display: inline-block;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+}
+.Ltstext{
+    /* width: 450px; */
+    color: rgb(150, 155, 158);
+    display: inline-block;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+.pAndInput{
+    margin: 0;
+}
+.pAndInput input{
+    width: 600px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    padding: 16.5px 18.5px 12.5px 18.5px;
+    z-index: 1;
+    outline: none;
+}
+.pAndInput input:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.d_flex{
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+.city input{
+    width: 250px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    outline: none;
+}
+.city input:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.city p{
+    font-weight: 700;
+}
+.pAndInput p{
+    font-weight: 700;
+}
+.state input{
+    width: 150px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    outline: none;
+}
+.state input:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.state p{
+    font-weight: 700;
+}
+.Zipcode input{
+    width: 180px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    outline: none;
+}
+.Zipcode p{
+    font-weight: 700;
+}
+.email input{
+    width: 330px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    outline: none;
+}
+.email input:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.email p{
+    font-weight: 700;
+}
+
+.phone input{
+    width: 258px;
+    color: hsl(200, 5%, 12%);
+    height: 45px;
+    outline: none;
+}
+.phone input:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.phone p{
+    font-weight: 700;
+}
+.buttons{
+    padding-top: 30px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+.logout{
+    border-radius: 2px;
+    border: none;
+    color: rgb(57, 57, 57);
+    background-color: rgb(192, 191, 191);
+    width: 200px;
+    height: 45px;
+    cursor: pointer;
+}
+.logout:hover{
+    background-color: rgb(160, 160, 160);
+}
+.next{
+    border-radius: 2px;
+    height: 45px;
+    border: none;
+    width: 200px;
+    color: white;
+    background-color: #fd625f;
+    cursor: pointer;
+}
+.logout p{
+    font-size: small;
+    font-weight: 900;
+}
+.next p{
+    font-size: small;
+    font-weight: 900;
+}
+.next:hover{
+    background-color: #fe807e;
+}

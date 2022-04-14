@@ -1,6 +1,6 @@
 import React from 'react'
-import Constructor from '../../Card/Constructor/Constructor'
-import HeaderMain from '../../Card/HeaderMain/HeaderMain'
+import Constructor from '../../UI/Constructor/Constructor'
+import HeaderMain from '../../UI/HeaderMain/HeaderMain'
 import classes from './MainPageForm.module.css'
 const MainPageForm = () => {
 	return (

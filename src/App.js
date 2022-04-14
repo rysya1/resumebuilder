@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import MainPageForm from './components/MainPage/MainPageForm/MainPageForm';
+import ContactPages from './pages/ContactPages';
+import MainPages from './pages/MainPages';
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<MainPageForm/>}/>
+      <Route path='/' element={<MainPages/>}/>
+      <Route path='/contact' element={<ContactPages/>}/>
     </Routes>
   );
 }

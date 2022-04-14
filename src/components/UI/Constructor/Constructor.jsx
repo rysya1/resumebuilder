@@ -1,8 +1,14 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import classes from './Constructor.module.css'
+
 const Constructor = () => {
+	const navigate = useNavigate()
+	const contact = () => {
+		navigate('/contact')
+	}
 	return (
-		<div className={classes.container}>
+		<div className={classes.container} onClick={contact}>
 			<div className={classes.constructor}>
 				<img
 					className={classes.icon_construct}

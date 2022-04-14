@@ -1,0 +1,38 @@
+.buttons{
+    padding-top: 30px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+.logout{
+    border-radius: 2px;
+    border: none;
+    color: rgb(57, 57, 57);
+    background-color: rgb(192, 191, 191);
+    width: 200px;
+    height: 45px;
+    cursor: pointer;
+}
+.logout:hover{
+    background-color: rgb(160, 160, 160);
+}
+.next{
+    border-radius: 2px;
+    height: 45px;
+    border: none;
+    width: 200px;
+    color: white;
+    background-color: #fd625f;
+    cursor: pointer;
+}
+.logout p{
+    font-size: small;
+    font-weight: 900;
+}
+.next p{
+    font-size: small;
+    font-weight: 900;
+}
+.next:hover{
+    background-color: #fe807e;
+}
