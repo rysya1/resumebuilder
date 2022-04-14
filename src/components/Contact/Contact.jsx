@@ -16,7 +16,7 @@ const Contact = () => {
 		navigate('/')
 	}
 	const experienceTips = () => {
-		navigate('/experiencetips')
+		navigate('/experience-tips')
 	}
 	return (
 		<>

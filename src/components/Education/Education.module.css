@@ -130,10 +130,10 @@
     display: flex;
 }
 .date{
+    outline: none;
     cursor: pointer;
     width: 295px;
     height: 40px;
-    outline: none;
 }
 .date:focus{
     border: #6cacd7 solid 1px;
@@ -172,4 +172,28 @@
     font-size: 18px;
     /* font-size: small; */
 	font-weight: 700;
+}
+.options select {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    float: none;
+    outline: none;
+}
+.options select:focus{
+    border: #6cacd7 solid 1px;
+    border-radius: 3px;
+}
+.options select option{
+    font-size: 15px;
+    color: #6cacd7;
+    max-height: 50px;
+    line-height: 50px;
+}
+.options p{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-weight: 700;
 }

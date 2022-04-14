@@ -1,0 +1,72 @@
+* {
+	box-sizing: border-box;
+}
+.container {
+	padding-top: 90px;
+	margin-left: 180px;
+	width: 600px;
+	color: #333;
+}
+.live_funnel {
+	font-size: 18px;
+}
+.container ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.tips_item {
+	display: flex;
+	line-height: 30px;
+}
+.tips_item span {
+	font-size: 18px;
+	margin-bottom: 20px;
+	padding-left: 10px;
+}
+.tips_item img {
+	height: 40px;
+	width: 40px;
+}
+.buttons {
+	padding-top: 30px;
+	width: 600px;
+	display: flex;
+	justify-content: space-between;
+}
+.experienceH1 h1 {
+	font-size: 36px;
+	margin-bottom: 33px;
+}
+.logout {
+	border-radius: 2px;
+	border: none;
+	color: rgb(57, 57, 57);
+	background-color: rgb(192, 191, 191);
+	width: 200px;
+	height: 45px;
+	cursor: pointer;
+}
+.logout:hover {
+	background-color: rgb(160, 160, 160);
+}
+.next {
+	border-radius: 2px;
+	height: 45px;
+	border: none;
+	width: 200px;
+	color: white;
+	background-color: #ff514f;
+	cursor: pointer;
+}
+.logout p {
+	font-size: small;
+	font-weight: 900;
+}
+.next p {
+	font-size: small;
+	font-weight: 900;
+}
+.next:hover {
+	background-color: #fd6f6c;
+}

@@ -11,8 +11,11 @@ const GlobalStyle = createGlobalStyle`
 const Experience = () => {
 	const navigate = useNavigate()
 	const experienceTips = () => {
-		navigate('/experiencetips')
+		navigate('/experience-tips')
 	}
+    const educationTips = () => {
+        navigate('/education-tips')
+    }
 	return (
 		<>
 			<HeaderMain />
@@ -66,7 +69,7 @@ const Experience = () => {
 					<button className={classes.logout} onClick={experienceTips}>
 						<p>НАЗАД</p>
 					</button>
-					<button className={classes.next}>
+					<button className={classes.next} onClick={educationTips}>
 						<p> ДАЛЕЕ</p>
 					</button>
 				</div>
