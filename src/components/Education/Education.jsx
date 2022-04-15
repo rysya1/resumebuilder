@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './Education.module.css'
 import { useNavigate } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
-import HeaderMain from '../UI/HeaderMain/HeaderMain'
+import ResumePreview from '../ResumePreview/ResumePreview'
 const GlobalStyle = createGlobalStyle`
   body{
     background: #ffffff;
@@ -18,8 +18,8 @@ const Education = () => {
 	}
 	return (
 		<>
-			<HeaderMain />
 			<GlobalStyle />
+            <div className={classes.main_container}>
 			<div className={classes.container}>
 				<div className={classes.experience_text}>
 					<h1>Образование</h1> <span>Где вы ходили в школу?</span>
@@ -96,6 +96,10 @@ const Education = () => {
 					
 				</div>
 			</div>
+            <div>
+                <ResumePreview/>
+            </div>
+            </div>
 		</>
 	)
 }

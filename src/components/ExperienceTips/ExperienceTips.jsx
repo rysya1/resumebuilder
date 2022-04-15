@@ -18,7 +18,7 @@ const ExperienceTips = () => {
 	}
 	return (
 		<div>
-			<HeaderMain />
+			{/* <HeaderMain /> */}
 			<GlobalStyle />
 			<div className={classes.container}>
 				<h2 className={classes.live_funnel}>Следующий раздел:</h2>

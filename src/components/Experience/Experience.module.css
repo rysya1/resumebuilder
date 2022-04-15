@@ -1,6 +1,11 @@
 *{
     box-sizing: border-box;
 }
+.main_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .container {
 	padding-top: 40px;
 	margin-left: 180px;

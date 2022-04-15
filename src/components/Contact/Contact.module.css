@@ -1,9 +1,16 @@
 *{
     box-sizing: border-box;
 }
+.main_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .container{
+    width: 770px;
+    height: 100%;
     margin-top: 40px;
-    margin-left: 180px;
+    margin-left: 170px;
 }
 .contactH1 h1 {
 	font-size: 36px;

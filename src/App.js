@@ -1,7 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Chart from './components/Chart';
 import Education from './components/Education/Education';
 import Experience from './components/Experience/Experience';
+import HeaderMain from './components/UI/HeaderMain/HeaderMain';
 import ContactPages from './pages/ContactPages';
 import EducationTipsPages from './pages/EducationTipsPages';
 import ExperienceTipsPages from './pages/ExperienceTipsPages';
@@ -9,6 +11,9 @@ import MainPages from './pages/MainPages';
 import SkillTipsPages from './pages/SkillTipsPages';
 function App() {
   return (
+    <>
+    <HeaderMain/>
+    <Chart/>
     <Routes>
       <Route path='/' element={<MainPages/>}/>
       <Route path='/contact' element={<ContactPages/>}/>
@@ -18,6 +23,7 @@ function App() {
       <Route path='/education' element={<Education/>}/>
       <Route path='/skill-tips' element={<SkillTipsPages/>}/>
     </Routes>
+    </>
   );
 }
 

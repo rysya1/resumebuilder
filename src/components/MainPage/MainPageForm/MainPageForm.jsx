@@ -5,9 +5,7 @@ import classes from './MainPageForm.module.css'
 const MainPageForm = () => {
 	return (
 		<div>
-			<header>
-				<HeaderMain />
-			</header>
+			{/* <HeaderMain /> */}
 			<section className={classes.container}>
 				<div>
 					<h1 className={classes.build_the_resume}>
