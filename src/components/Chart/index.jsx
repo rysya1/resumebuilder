@@ -27,6 +27,12 @@ const Chart = () => {
         if (pathname === '/skill-tips') {
             setChart(80)
         }
+        if (pathname === '/skills') {
+            setChart(80)
+        }
+        if (pathname === '/finish-project') {
+            setChart(100)
+        }
     })
 	return (
 		<ChartStyled>

@@ -10,6 +10,10 @@
 	padding-top: 40px;
 	margin-left: 180px;
 	width: 600px;
+    /* overflow-inline: scroll; */
+    /* overflow-y: scroll; */
+    /* scroll-snap-type-y: ; */
+    height: 100%;
 	color: #333;
 }
 .experience_text{

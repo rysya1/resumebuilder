@@ -4,70 +4,92 @@
 .document_contaner {
 	width: 650px;
 	background-color: #e2e2e2;
-	height: 105%;
-	border-left: #545454 solid 3px;
-    padding: 40px 0 0 0 ;
+	height: 125vh;
+	border-left: #b9b9b9 solid 10px;
+	padding: 40px 0 0 0;
+}
+.contacts_item {
+	display: flex;
+}
+.icon {
+	margin-right: 2px;
+	padding-top: 5px;
+	width: 13px;
+	height: 16px;
 }
 .header_contact {
 	color: white;
 	background-color: #d0021b;
-    height: 150px;
+	height: 150px;
 	width: 100%;
 }
 .container {
 	margin: 0 auto;
-    /* margin-top: 50px; */
+	/* margin-top: 50px; */
 	/* padding-top: 20px; */
 	background-color: white;
 	width: 500px;
-    height: 90%;
+	height: 90%;
 	z-index: 10;
 }
-.name{
-    font-size: 20px;
+.name {
+	font-size: 20px;
+	text-transform: uppercase;
 }
-.contact_description{
-    margin: 0 auto;
-    width: 445px;
-    display: flex;
-    justify-content: space-between;
+.contact_description {
+	margin: 0 auto;
+	width: 445px;
+	display: flex;
+	justify-content: space-between;
 }
-.description{
-    padding-left: 10px;
-    padding-top: 25px;
-    display: flex;   
-    flex-direction: column;
-    line-height: 18px;
+.description {
+	padding-left: 10px;
+	padding-top: 25px;
+	display: flex;
+	flex-direction: column;
+	line-height: 18px;
 }
-.container_description{
-    border-left: white solid;
-    height: 150px;
+.container_description {
+	border-left: white solid;
+	height: 150px;
 }
-.state_index{
-    line-height:10px;
+.state_index {
+	line-height: 10px;
 }
-.experience{
-    margin: 0 auto;
-    padding-top: 20px;
-    width: 445px;
+.experience {
+	margin: 0 auto;
+	padding-top: 20px;
+	width: 445px;
 }
-.state_index samp{
-    padding-left: 3px;
+.state_index samp {
+	padding-left: 3px;
 }
-.main_text{
-    padding-bottom: 5px;
-    border-bottom: #d0021b solid 2px;
+.main_text {
+	padding-bottom: 5px;
+	border-bottom: #d0021b solid 2px;
 }
-.main_text span{
-    font-weight: 700;
+.main_text span {
+	font-weight: 700;
 }
-.main_description{
-     padding-top: 5px;
+.main_description {
+	padding-top: 5px;
 }
-.main_description p{
-   
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 13px;
+.main_description span {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: 600;
+	padding-left: 5px;
+}
+.main_description p {
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 10px;
+}
+.main_description samp {
+	font-size: 12px;
+	font-weight: 200;
+	padding-left: 7px;
 }

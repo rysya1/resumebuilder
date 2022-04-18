@@ -1,0 +1,36 @@
+.container_skill_items{
+    display: flex;
+    padding-top: 20px;
+    /* width: 600px; */
+    max-width: 600px;
+    color: white;
+}
+.skill_items{
+    display: flex;
+    background-color: #26a0f4;
+    border-radius: 20px;
+    padding: 6px;
+}
+.skill_items span{
+    padding-left: 10px;
+    padding-right: 5px;
+    font-size: 19px;
+    font-weight: 600;
+}
+.icon{
+    background-color: #0083e4;
+    border-radius: 15px;
+    height: 31px;
+    width: 31px;
+}
+.icon img{
+    padding-top: 3.5px;
+    padding-left: 4px;
+}
+.icon_delete{
+    cursor: pointer;
+    padding-top: 2.5px;
+    padding-left: 15px;
+    /* height: 25px;
+    width: 25px; */
+}

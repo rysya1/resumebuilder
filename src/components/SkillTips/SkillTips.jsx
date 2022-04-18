@@ -13,8 +13,8 @@ const SkillTips = () => {
 	const education = () => {
 		navigate('/education')
 	}
-	const experience = () => {
-		navigate('/experience')
+	const skills = () => {
+		navigate('/skills')
 	}
 	return (
 		<div>
@@ -46,7 +46,7 @@ const SkillTips = () => {
 					<button onClick={education} className={classes.logout}>
 						<p>НАЗАД</p>
 					</button>
-					<button  className={classes.next} >
+					<button onClick={skills} className={classes.next} >
 						<p> ДАЛЕЕ</p>
 					</button>
 				</div>

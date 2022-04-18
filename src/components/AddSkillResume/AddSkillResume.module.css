@@ -1,0 +1,20 @@
+.container_skill_items{
+    padding-top: 5px;
+    padding-left: 20px;
+}
+.skill_items{
+    display: flex;
+    justify-content: start;
+    width:500px ;
+}
+.skill_items ul{
+    margin: 0;
+    padding: 0;
+
+}
+
+.skill_items ul li{
+    
+    font-size: 14px;
+    font-weight: 500;
+}
