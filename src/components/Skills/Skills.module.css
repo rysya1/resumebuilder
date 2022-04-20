@@ -1,149 +1,153 @@
-*{
-    box-sizing: border-box;
+* {
+   box-sizing: border-box;
 }
-.main_container{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.main_container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
 }
 .container {
-	padding-top: 40px;
-	margin-left: 180px;
-	width: 600px;
-    height: 100%;
-	color: #333;
+   padding-top: 40px;
+   margin-left: 180px;
+   width: 600px;
+   height: 100%;
+   color: #333;
 }
-.experience_text{
-    line-height: 30px;
-    margin-bottom: 10px;
+.experience_text {
+   line-height: 30px;
+   margin-bottom: 10px;
 }
 .experience_text h1 {
-	font-size: 36px;
-    padding-bottom: 15px;
-    margin: 0;
+   font-size: 36px;
+   padding-bottom: 15px;
+   margin: 0;
 }
-.pAndInput{
-    margin: 0;
+.pAndInput {
+   margin: 0;
 }
-.pAndInput input{
-    width: 450px;
-    color: hsl(200, 5%, 12%);
-    height: 45px;
-    padding: 16.5px 18.5px 12.5px 18.5px;
-    z-index: 1;
-    outline: none;
+.pAndInput input {
+   width: 450px;
+   color: hsl(200, 5%, 12%);
+   height: 45px;
+   padding: 16.5px 18.5px 12.5px 18.5px;
+   z-index: 1;
+   outline: none;
 }
-.pAndInput input:focus{
-    border: #6cacd7 solid 2px;
-    border-radius: 2px;
+.pAndInput input:focus {
+   border: #6cacd7 solid 2px;
+   border-radius: 2px;
 }
 
-.pAndInput p{
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    font-weight: 700;
+.pAndInput p {
+   margin: 0;
+   padding-top: 20px;
+   padding-bottom: 5px;
+   font-weight: 700;
 }
 .buttons {
-	padding-top: 30px;
-	width: 600px;
-	display: flex;
-	justify-content: space-between;
-    padding-bottom: 30px;
+   padding-top: 30px;
+   width: 600px;
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 30px;
 }
-.d_flex{
-    display: flex;
+.d_flex {
+   display: flex;
 }
 .logout {
-	border-radius: 2px;
-	border: none;
-	color: rgb(57, 57, 57);
-	background-color: rgb(192, 191, 191);
-	width: 200px;
-	height: 45px;
-	cursor: pointer;
+   border-radius: 2px;
+   border: none;
+   color: rgb(57, 57, 57);
+   background-color: rgb(192, 191, 191);
+   width: 200px;
+   height: 45px;
+   cursor: pointer;
 }
 .logout:hover {
-	background-color: rgb(160, 160, 160);
+   background-color: rgb(160, 160, 160);
 }
 .next {
-	border-radius: 2px;
-	height: 45px;
-	border: none;
-	width: 200px;
-	color: white;
-	background-color: #ff514f;
-	cursor: pointer;
+   border-radius: 2px;
+   height: 45px;
+   border: none;
+   width: 200px;
+   color: white;
+   background-color: #ff514f;
+   cursor: pointer;
 }
 .logout p {
-	font-size: small;
-	font-weight: 900;
+   font-size: small;
+   font-weight: 900;
 }
 .next p {
-    
-	font-size: small;
-	font-weight: 900;
+   font-size: small;
+   font-weight: 900;
 }
 .next:hover {
-	background-color: #fd6f6c;
+   background-color: #fd6f6c;
+}
+.skills {
+   width: 600px;
+   display: flex;
+   flex-wrap: wrap;
 }
 /* From uiverse.io by @abrahamcalsin */
 .buttonAdd {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #6cacd7;
-    font-family: "Montserrat", sans-serif;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    border: none;
-    cursor: pointer;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #6cacd7;
+   font-family: 'Montserrat', sans-serif;
+   box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+   overflow: hidden;
+   border: none;
+   cursor: pointer;
+}
+
+.buttonAdd:after {
+   content: ' ';
+   width: 0%;
+   height: 100%;
+   background: #fd6f6c;
+   position: absolute;
+   transition: all 0.4s ease-in-out;
+   right: 0;
+}
+
+.buttonAdd:hover::after {
+   right: auto;
+   left: 0;
+   width: 100%;
+}
+
+.buttonAdd span {
+   text-align: center;
+   text-decoration: none;
+   width: 100%;
+   padding: 12px 20px;
+   color: #fff;
+   font-size: 1.125em;
+   font-weight: 700;
+   letter-spacing: 0.3em;
+   z-index: 20;
+   transition: all 0.3s ease-in-out;
+}
+
+.buttonAdd:hover span {
+   animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+   0% {
+      transform: scale(1);
    }
-   
-   .buttonAdd:after {
-    content: " ";
-    width: 0%;
-    height: 100%;
-    background: #fd6f6c;
-    position: absolute;
-    transition: all 0.4s ease-in-out;
-    right: 0;
+
+   50% {
+      transform: scale(0.95);
    }
-   
-   .buttonAdd:hover::after {
-    right: auto;
-    left: 0;
-    width: 100%;
+
+   100% {
+      transform: scale(1);
    }
-   
-   .buttonAdd span {
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-    padding: 12px 20px;
-    color: #fff;
-    font-size: 1.125em;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    z-index: 20;
-    transition: all 0.3s ease-in-out;
-   }
-   
-   .buttonAdd:hover span {
-    animation: scaleUp 0.3s ease-in-out;
-   }
-   
-   @keyframes scaleUp {
-    0% {
-     transform: scale(1);
-    }
-   
-    50% {
-     transform: scale(0.95);
-    }
-   
-    100% {
-     transform: scale(1);
-    }
-   }
+}

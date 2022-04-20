@@ -10,9 +10,6 @@
 	padding-top: 40px;
 	margin-left: 180px;
 	width: 600px;
-    /* overflow-inline: scroll; */
-    /* overflow-y: scroll; */
-    /* scroll-snap-type-y: ; */
     height: 100%;
 	color: #333;
 }
@@ -147,14 +144,6 @@
 .date:focus{
     border: #6cacd7 solid 1px;
     border-radius: 3px;
-}
-.checkbox_style font{
-    font-weight: 600;
-}
-.checkbox_style input{
-    
-    width: 17px;
-    height: 17px;
 }
 .pAndTextArea{
     margin: 0;

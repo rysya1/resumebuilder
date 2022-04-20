@@ -1,128 +1,146 @@
-import React from 'react'
-import classes from './ResumePreview.module.css'
-import { useSelector } from 'react-redux'
-import AddSkillsForm from '../AddSkillsForm/AddSkillsForm'
+import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
 import AddSkillsResume from '../AddSkillResume/AddSkillResume'
+import { getSkillsInLocalStorege } from '../../features/skill/skillSlice'
+import classes from './ResumePreview.module.css'
+
 const ResumePreview = () => {
-	const name = useSelector((state) => state.user.firstName)
-	const address = useSelector((state) => state.user.address)
-	const city = useSelector((state) => state.user.city)
-	const state = useSelector((state) => state.user.state)
-	const postCode = useSelector((state) => state.user.postCode) //postСode
-	const elementAddress = useSelector((state) => state.user.elementAddress)
-	const phone = useSelector((state) => state.user.phone)
-	const skills = useSelector((state) => state.skills.skills)
-	console.log(postCode)
-	return (
-		<div className={classes.document_contaner}>
-			<div className={classes.container}>
-				<header className={classes.header_contact}>
-					<div className={classes.contact_description}>
-						<p className={classes.name}>{name}</p>
-						<div className={classes.container_description}>
-							<div className={classes.description}>
-								<div className={classes.contacts_item}>
-									<img
-										className={classes.icon}
-										src='https://img.icons8.com/material/24/ffffff/worldwide-location--v1.png'
-									/>
-									<samp>{address}</samp>
-								</div>
-								<div className={classes.contacts_item}>
-									<img
-										className={classes.icon}
-										src='https://img.icons8.com/material/24/ffffff/worldwide-location--v1.png'
-									/>
-									<samp>{city}</samp>
-								</div>
-								<div className={classes.state_index}>
-									<samp>{state}</samp>
-									<samp>{postCode}</samp>
-								</div>
-								<div className={classes.contacts_item}>
-									<img
-										className={classes.icon}
-										src='https://img.icons8.com/material-rounded/24/ffffff/new-post.png'
-									/>
-									<samp>{elementAddress}</samp>
-								</div>
-								<div className={classes.contacts_item}>
-									<img
-										className={classes.icon}
-										src='https://img.icons8.com/material-outlined/24/ffffff/add-phone.png'
-									/>
-									<samp>{phone}</samp>
-								</div>
-							</div>
-						</div>
-					</div>
-				</header>
-				<section>
-					<div className={classes.experience}>
-						<div className={classes.main_text}>
-							<span>Опыт</span>
-						</div>
-						<div className={classes.main_description}>
-							<div>
-								<span>Програмирование,</span>
-								<span>js,</span>
-								<span>Bishkek,</span>
-								<span>16</span>
-							</div>
-							<samp>
-								16.02.21
-							</samp>
-							<samp>23.08.22</samp>
-							<p>
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Nobis natus magnam accusantium
-								animi enim sit iure necessitatibus labore optio
-								et modi obcaecati minima dolores temporibus,
-								nemo deserunt incidunt sapiente veniam.
-							</p>
-						</div>
-					</div>
-					<div className={classes.experience}>
-						<div className={classes.main_text}>
-							<span>Образование</span>
-						</div>
-						<div className={classes.main_description}>
-							<div>
-								<span>BBA,</span>
-								<span>add</span>
-							</div>
-						<div>
-								<span>Uvkg,</span>
-								
-								<span>Bishkek,</span>
-								<span>16</span>
-								
-							</div>
-							<samp>
-								16.02.21,
-							</samp>
-							<samp>23.08.22</samp>
-							<p>
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Nobis natus magnam accusantium
-								animi enim sit iure necessitatibus labore optio
-								et modi obcaecati minima dolores temporibus,
-								nemo deserunt incidunt sapiente veniam.
-							</p>
-						</div>
-						<div className={classes.experience}>
-							<div className={classes.main_text}>
-								<span>Навыки</span>
-							</div>
-							{skills.map((skill) => (
-								<AddSkillsResume key={skill.id} skill={skill} />
-							))}
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
-	)
+   const { t } = useTranslation()
+   const dispatch = useDispatch()
+   const { firstName, address, city, state, postCode, elementAddress, phone } =
+      useSelector((state) => state.user.content.contacts)
+   const {
+      workName,
+      employer,
+      cityExperience,
+      stateExperience,
+      startDate,
+      expirationDate,
+      description,
+   } = useSelector((state) => state.user.content.experience)
+
+   const {
+      schoolName,
+      degree,
+      cityEducation,
+      stateEducation,
+      study,
+      startDateEducation,
+      expirationDateEducation,
+      descriptionEducation,
+   } = useSelector((state) => state.user.content.education)
+
+   const { content } = useSelector((state) => state.user)
+   const skills = useSelector((state) => state.skills.skills)
+   useEffect(() => {
+      const saved = JSON.parse(localStorage.getItem('skills'))
+      dispatch(getSkillsInLocalStorege(saved))
+   }, [])
+   useEffect(() => {
+      localStorage.setItem('skills', JSON.stringify(skills))
+   }, [skills])
+   useEffect(() => {
+      localStorage.setItem('content', JSON.stringify(content))
+   }, [content])
+
+   return (
+      <div className={classes.document_contaner}>
+         <div className={classes.container}>
+            <header className={classes.header_contact}>
+               <div className={classes.contact_description}>
+                  <p className={classes.name}>{firstName}</p>
+                  <div className={classes.container_description}>
+                     <div className={classes.description}>
+                        <div className={classes.contacts_item}>
+                           <img
+                              className={classes.icon}
+                              src="https://img.icons8.com/material/24/ffffff/worldwide-location--v1.png"
+                              alt=""
+                           />
+                           <samp>{address}</samp>
+                        </div>
+                        <div className={classes.contacts_item}>
+                           <img
+                              className={classes.icon}
+                              src="https://img.icons8.com/material/24/ffffff/worldwide-location--v1.png"
+                              alt=""
+                           />
+                           <samp>{city}</samp>
+                        </div>
+                        <div className={classes.state_index}>
+                           <samp>{state}</samp>
+                           <samp>{postCode}</samp>
+                        </div>
+                        <div className={classes.contacts_item}>
+                           <img
+                              className={classes.icon}
+                              src="https://img.icons8.com/material-rounded/24/ffffff/new-post.png"
+                              alt=""
+                           />
+                           <samp>{elementAddress}</samp>
+                        </div>
+                        <div className={classes.contacts_item}>
+                           <img
+                              className={classes.icon}
+                              src="https://img.icons8.com/material-outlined/24/ffffff/add-phone.png"
+                              alt=""
+                           />
+                           <samp>{phone}</samp>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </header>
+            <section>
+               <div className={classes.experience}>
+                  <div className={classes.main_text}>
+                     <span>{t('experience.main_text')}</span>
+                  </div>
+                  <div className={classes.main_description}>
+                     <div>
+                        <span>{workName},</span>
+                        <span>{employer},</span>
+                        <span>{cityExperience},</span>
+                        <span>{stateExperience}</span>
+                     </div>
+                     <samp>{startDate}</samp>
+                     <samp>{expirationDate}</samp>
+                     <p>{description}</p>
+                  </div>
+               </div>
+               <div className={classes.experience}>
+                  <div className={classes.main_text}>
+                     <span>{t('education.main_text')}</span>
+                  </div>
+                  <div className={classes.main_description}>
+                     <div>
+                        <span>{degree},</span>
+                        <span>{study}</span>
+                     </div>
+                     <div>
+                        <span>{schoolName},</span>
+
+                        <span>{cityEducation},</span>
+                        <span>{stateEducation}</span>
+                     </div>
+                     <samp>{startDateEducation}</samp>
+                     <samp>{expirationDateEducation}</samp>
+                     <p>{descriptionEducation}</p>
+                  </div>
+                  <div className={classes.experience}>
+                     <div className={classes.main_text}>
+                        <span>{t('skills.main_text')}</span>
+                     </div>
+                     {skills.map((skill) => (
+                        <AddSkillsResume key={skill.id} skill={skill} />
+                     ))}
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+   )
 }
 
 export default ResumePreview

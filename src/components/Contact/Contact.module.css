@@ -1,175 +1,175 @@
-*{
-    box-sizing: border-box;
+* {
+   box-sizing: border-box;
 }
-.main_container{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.main_container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
 }
-.container{
-    width: 770px;
-    height: 100%;
-    margin-top: 40px;
-    margin-left: 170px;
+.container {
+   width: 770px;
+   height: 100%;
+   margin-top: 40px;
+   margin-left: 170px;
 }
 .contactH1 h1 {
-	font-size: 36px;
-	padding: 0;
-    margin: 0;
+   font-size: 36px;
+   padding: 0;
+   margin: 0;
 }
 .Ltsbz {
-    color: rgb(30, 32, 33);
-    display: inline-block;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
+   color: rgb(30, 32, 33);
+   display: inline-block;
+   font-size: 24px;
+   line-height: 32px;
+   font-weight: 500;
 }
-.Ltstext{
-    /* width: 450px; */
-    color: rgb(150, 155, 158);
-    display: inline-block;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
+.Ltstext {
+   /* width: 450px; */
+   color: rgb(150, 155, 158);
+   display: inline-block;
+   font-family: Roboto, sans-serif;
+   font-size: 16px;
+   line-height: 24px;
 }
-.pAndInput{
-    margin: 0;
+.pAndInput {
+   margin: 0;
 }
-.pAndInput input{
-    width: 600px;
-    color: hsl(200, 5%, 12%);
-    height: 45px;
-    padding: 16.5px 18.5px 12.5px 18.5px;
-    z-index: 1;
-    outline: none;
+.pAndInput input {
+   width: 600px;
+   color: hsl(200, 5%, 12%);
+   height: 45px;
+   padding: 16.5px 18.5px 12.5px 18.5px;
+   z-index: 1;
+   outline: none;
 }
-.pAndInput input:focus{
-    border: #6cacd7 solid 1px;
-    border-radius: 3px;
+.pAndInput input:focus {
+   border: #6cacd7 solid 1px;
+   border-radius: 3px;
 }
-.d_flex{
-    width: 600px;
-    display: flex;
-    justify-content: space-between;
+.d_flex {
+   width: 600px;
+   display: flex;
+   justify-content: space-between;
 }
-.city input{
-    width: 250px;
-    color: hsl(200, 5%, 12%);
-    height: 45px;
-    outline: none;
+.city input {
+   width: 250px;
+   color: hsl(200, 5%, 12%);
+   height: 45px;
+   outline: none;
 }
-.city input:focus{
-    border: #6cacd7 solid 1px;
-    border-radius: 3px;
+.city input:focus {
+   border: #6cacd7 solid 1px;
+   border-radius: 3px;
 }
-.city p{
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    font-weight: 700;
+.city p {
+   margin: 0;
+   padding-top: 20px;
+   padding-bottom: 5px;
+   font-weight: 700;
 }
-.pAndInput p{
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    font-weight: 700;
+.pAndInput p {
+   margin: 0;
+   padding-top: 20px;
+   padding-bottom: 5px;
+   font-weight: 700;
 }
-.state input{
-    width: 150px;
-    color: hsl(200, 5%, 12%);
-    height: 45px;
-    outline: none;
+.state input {
+   width: 150px;
+   color: hsl(200, 5%, 12%);
+   height: 45px;
+   outline: none;
 }
-.state input:focus{
-    border: #6cacd7 solid 1px;
-    border-radius: 3px;
+.state input:focus {
+   border: #6cacd7 solid 1px;
+   border-radius: 3px;
 }
-.state p{
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    font-weight: 700;
+.state p {
+   margin: 0;
+   padding-top: 20px;
+   padding-bottom: 5px;
+   font-weight: 700;
 }
-.Zipcode input{
-    width: 180px;
-    color: hsl(200, 5%, 12%);
-    height: 45px;
-    outline: none;
+.Zipcode input {
+   width: 180px;
+   color: hsl(200, 5%, 12%);
+   height: 45px;
+   outline: none;
 }
-.Zipcode p{
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    font-weight: 700;
+.Zipcode p {
+   margin: 0;
+   padding-top: 20px;
+   padding-bottom: 5px;
+   font-weight: 700;
 }
-.email input{
-    width: 330px;
-    color: hsl(200, 5%, 12%);
-    height: 45px;
-    outline: none;
+.email input {
+   width: 330px;
+   color: hsl(200, 5%, 12%);
+   height: 45px;
+   outline: none;
 }
-.email input:focus{
-    border: #6cacd7 solid 1px;
-    border-radius: 3px;
+.email input:focus {
+   border: #6cacd7 solid 1px;
+   border-radius: 3px;
 }
-.email p{
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    font-weight: 700;
+.email p {
+   margin: 0;
+   padding-top: 20px;
+   padding-bottom: 5px;
+   font-weight: 700;
 }
 
-.phone input{
-    width: 258px;
-    color: hsl(200, 5%, 12%);
-    height: 45px;
-    outline: none;
+.phone input {
+   width: 258px;
+   color: hsl(200, 5%, 12%);
+   height: 45px;
+   outline: none;
 }
-.phone input:focus{
-    border: #6cacd7 solid 1px;
-    border-radius: 3px;
+.phone input:focus {
+   border: #6cacd7 solid 1px;
+   border-radius: 3px;
 }
-.phone p{
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    font-weight: 700;
+.phone p {
+   margin: 0;
+   padding-top: 20px;
+   padding-bottom: 5px;
+   font-weight: 700;
 }
-.buttons{
-    padding-top: 30px;
-    width: 600px;
-    display: flex;
-    justify-content: space-between;
+.buttons {
+   padding-top: 30px;
+   width: 600px;
+   display: flex;
+   justify-content: space-between;
 }
-.logout{
-    border-radius: 2px;
-    border: none;
-    color: rgb(57, 57, 57);
-    background-color: rgb(192, 191, 191);
-    width: 200px;
-    height: 45px;
-    cursor: pointer;
+.logout {
+   border-radius: 2px;
+   border: none;
+   color: rgb(57, 57, 57);
+   background-color: rgb(192, 191, 191);
+   width: 200px;
+   height: 45px;
+   cursor: pointer;
 }
-.logout:hover{
-    background-color: rgb(160, 160, 160);
+.logout:hover {
+   background-color: rgb(160, 160, 160);
 }
-.next{
-    border-radius: 2px;
-    height: 45px;
-    border: none;
-    width: 200px;
-    color: white;
-    background-color: #ff514f;
-    cursor: pointer;
+.next {
+   border-radius: 2px;
+   height: 45px;
+   border: none;
+   width: 200px;
+   color: white;
+   background-color: #ff514f;
+   cursor: pointer;
 }
-.logout p{
-    font-size: small;
-    font-weight: 900;
+.logout p {
+   font-size: small;
+   font-weight: 900;
 }
-.next p{
-    font-size: small;
-    font-weight: 900;
+.next p {
+   font-size: small;
+   font-weight: 900;
 }
-.next:hover{
-    background-color: #fd6f6c;
+.next:hover {
+   background-color: #fd6f6c;
 }

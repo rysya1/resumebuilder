@@ -1,12 +1,12 @@
 .container_skill_items{
     display: flex;
     padding-top: 20px;
-    /* width: 600px; */
-    max-width: 600px;
+    max-width: 610px;
     color: white;
 }
 .skill_items{
     display: flex;
+    margin-left: 10px;
     background-color: #26a0f4;
     border-radius: 20px;
     padding: 6px;

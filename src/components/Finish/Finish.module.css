@@ -2,13 +2,12 @@
 	box-sizing: border-box;
 }
 .main_container{
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
 }
 .container {
 	padding-top: 40px;
-	margin-left: 180px;
 	width: 600px;
 	color: #333;
 }
@@ -87,4 +86,8 @@
     padding-left: 10px;
     font-size: 17px;
     font-weight: 600;
+}
+.a{
+    position: absolute;
+    top: 50%;
 }

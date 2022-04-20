@@ -6,6 +6,7 @@
 	background-color: #e2e2e2;
 	height: 125vh;
 	border-left: #b9b9b9 solid 10px;
+	border-right: #b9b9b9 solid 10px;
 	padding: 40px 0 0 0;
 }
 .contacts_item {
@@ -25,8 +26,6 @@
 }
 .container {
 	margin: 0 auto;
-	/* margin-top: 50px; */
-	/* padding-top: 20px; */
 	background-color: white;
 	width: 500px;
 	height: 90%;

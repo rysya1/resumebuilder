@@ -1,18 +1,27 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
+
 const initialState = {
-    skills: []
+   skills: [],
+   localSkills: [],
 }
 export const skillSlice = createSlice({
-	name: 'skills',
-	initialState,
-	reducers: {
-		addSkill: (state, action) => {
-			state.skills.push(action.payload)
-		},
-		removeSkill:(state,action) => {
-			state.skills = state.skills.filter((skill) => skill.id === action.payload.id)
-		}
-	},
+   name: 'skills',
+   initialState,
+   reducers: {
+      addSkill: (state, action) => {
+         state.skills.push(action.payload)
+      },
+      removeSkill: (state, action) => {
+         const currentSkill = state.skills.findIndex(
+            (el) => el.id === action.payload
+         )
+         state.skills.splice(currentSkill, 1)
+      },
+      getSkillsInLocalStorege(state, action) {
+         state.skills = action.payload
+      },
+   },
 })
-export const { addSkill,removeSkill } = skillSlice.actions
+export const { addSkill, removeSkill, getSkillsInLocalStorege } =
+   skillSlice.actions
 export default skillSlice.reducer
