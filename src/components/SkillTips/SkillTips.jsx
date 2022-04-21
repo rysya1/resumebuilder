@@ -20,7 +20,6 @@ const SkillTips = () => {
    }
    return (
       <div>
-         {/* <HeaderMain /> */}
          <GlobalStyle />
          <div className={classes.container}>
             <h2 className={classes.live_funnel}>

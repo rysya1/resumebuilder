@@ -8,6 +8,7 @@ import { addSkill } from '../../features/skill/skillSlice'
 import AddSkillsForm from '../AddSkillsForm/AddSkillsForm'
 import ResumePreview from '../ResumePreview/ResumePreview'
 import classes from './Skills.module.css'
+import { toggleActions } from '../../features/toggle/toggleSlice'
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -20,17 +21,18 @@ const Skills = () => {
    const dispatch = useDispatch()
    const [title, setTitle] = useState('')
    const skills = useSelector((state) => state.skills.skills)
-
+   const { toggleState } = useSelector((state) => state.toggle)
+   const finish = () => {
+      dispatch(toggleActions.hideEdit())
+      navigate('/finish')
+   }
    const skillsTips = () => {
       navigate('/skill-tips')
    }
-   const finish = () => {
-      navigate('/finish')
-   }
+
    const skillsChangeHandler = (e) => {
       setTitle(e.target.value)
    }
-
    const submitHandler = () => {
       const skill = {
          id: v4(),
@@ -40,7 +42,6 @@ const Skills = () => {
       if (title.trim().length > 0) {
          dispatch(addSkill(skill))
       }
-
       setTitle('')
    }
    return (
@@ -75,14 +76,23 @@ const Skills = () => {
                   ))}
                </div>
 
-               <div className={classes.buttons}>
-                  <button className={classes.logout} onClick={skillsTips}>
-                     <p>{t('skills.logout')}</p>
-                  </button>
-                  <button onClick={finish} className={classes.next}>
-                     <p>{t('skills.next')}</p>
-                  </button>
-               </div>
+               {!toggleState && (
+                  <div className={classes.buttons}>
+                     <button className={classes.logout} onClick={skillsTips}>
+                        <p>{t('skills.logout')}</p>
+                     </button>
+                     <button onClick={finish} className={classes.next}>
+                        <p>{t('skills.next')}</p>
+                     </button>
+                  </div>
+               )}
+               {toggleState && (
+                  <div className={classes.buttons}>
+                     <button onClick={finish} className={classes.next}>
+                        <p>{t('finish.finish')}</p>
+                     </button>
+                  </div>
+               )}
             </div>
             <div>
                <ResumePreview />

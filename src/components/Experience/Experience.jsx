@@ -1,11 +1,12 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import classes from './Experience.module.css'
 import ResumePreview from '../ResumePreview/ResumePreview'
 import { userActions } from '../../features/user/userSlice'
+import { toggleActions } from '../../features/toggle/toggleSlice'
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -16,6 +17,11 @@ const Experience = () => {
    const { t } = useTranslation()
    const dispatch = useDispatch()
    const navigate = useNavigate()
+   const { toggleState } = useSelector((state) => state.toggle)
+   const finish = () => {
+      dispatch(toggleActions.hideEdit())
+      navigate('/finish')
+   }
    const experienceTips = () => {
       navigate('/experience-tips')
    }
@@ -60,43 +66,68 @@ const Experience = () => {
 
                   <div className={classes.pAndInput}>
                      <p>{t('experience.employer')}</p>
-                     <input type="text" onChange={employerHandler}/>
+                     <input type="text" onChange={employerHandler} />
                   </div>
 
                   <div className={classes.d_flex}>
                      <div className={classes.city}>
                         <p>{t('experience.city')}</p>
-                        <input type="text" onChange={cityHandler}/>
+                        <input type="text" onChange={cityHandler} />
                      </div>
                      <div className={classes.state}>
                         <p>{t('experience.state')}</p>
-                        <input type="text" onChange={stateHandler}/>
+                        <input type="text" onChange={stateHandler} />
                      </div>
                   </div>
                   <div className={classes.d_flex_date}>
                      <div>
                         <p>{t('experience.start-date')}</p>
-                        <input className={classes.date} type="date" onChange={startDateHandler}/>
+                        <input
+                           className={classes.date}
+                           type="date"
+                           onChange={startDateHandler}
+                        />
                      </div>
                      <div>
                         <p>{t('experience.expiration-date')}</p>
-                        <input className={classes.date} type="date" onChange={expirationDateHandler}/>
-         
+                        <input
+                           className={classes.date}
+                           type="date"
+                           onChange={expirationDateHandler}
+                        />
                      </div>
                   </div>
                   <div className={classes.pAndTextArea}>
                      <p>{t('experience.description')}</p>
-                     <textarea name="" id="" cols="30" rows="10" onChange={descriptionHandler}/>
+                     <textarea
+                        name=""
+                        id=""
+                        cols="30"
+                        rows="10"
+                        onChange={descriptionHandler}
+                     />
                   </div>
                </div>
-               <div className={classes.buttons}>
-                  <button className={classes.logout} onClick={experienceTips}>
-                     <p>{t('experience.logout')}</p>
-                  </button>
-                  <button className={classes.next} onClick={educationTips}>
-                     <p>{t('experience.next')}</p>
-                  </button>
-               </div>
+               {!toggleState && (
+                  <div className={classes.buttons}>
+                     <button
+                        className={classes.logout}
+                        onClick={experienceTips}
+                     >
+                        <p>{t('experience.logout')}</p>
+                     </button>
+                     <button className={classes.next} onClick={educationTips}>
+                        <p>{t('experience.next')}</p>
+                     </button>
+                  </div>
+               )}
+               {toggleState && (
+                  <div className={classes.buttons}>
+                     <button onClick={finish} className={classes.next}>
+                        <p>{t('finish.finish')}</p>
+                     </button>
+                  </div>
+               )}
             </div>
             <div>
                <ResumePreview />

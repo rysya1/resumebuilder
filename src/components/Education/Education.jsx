@@ -1,11 +1,12 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import classes from './Education.module.css'
 import ResumePreview from '../ResumePreview/ResumePreview'
 import { userActions } from '../../features/user/userSlice'
+import { toggleActions } from '../../features/toggle/toggleSlice'
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -16,6 +17,11 @@ const Education = () => {
    const { t } = useTranslation()
    const dispatch = useDispatch()
    const navigate = useNavigate()
+   const { toggleState } = useSelector((state) => state.toggle)
+   const finish = () => {
+      dispatch(toggleActions.hideEdit())
+      navigate('/finish')
+   }
    const skillTips = () => {
       navigate('/skill-tips')
    }
@@ -124,14 +130,23 @@ const Education = () => {
                      />
                   </div>
                </div>
-               <div className={classes.buttons}>
-                  <button className={classes.logout} onClick={educationTips}>
-                     <p>{t('education.logout')}</p>
-                  </button>
-                  <button onClick={skillTips} className={classes.next}>
-                     <p>{t('education.next')}</p>
-                  </button>
-               </div>
+               {!toggleState && (
+                  <div className={classes.buttons}>
+                     <button className={classes.logout} onClick={educationTips}>
+                        <p>{t('education.logout')}</p>
+                     </button>
+                     <button onClick={skillTips} className={classes.next}>
+                        <p>{t('education.next')}</p>
+                     </button>
+                  </div>
+               )}
+               {toggleState && (
+                  <div className={classes.buttons}>
+                     <button onClick={finish} className={classes.next}>
+                        <p>{t('finish.finish')}</p>
+                     </button>
+                  </div>
+               )}
             </div>
             <div>
                <ResumePreview />

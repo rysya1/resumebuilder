@@ -2,10 +2,11 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { createGlobalStyle } from 'styled-components'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import classes from './Contact.module.css'
 import ResumePreview from '../ResumePreview/ResumePreview'
 import { userActions } from '../../features/user/userSlice'
+import { toggleActions } from '../../features/toggle/toggleSlice'
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -17,7 +18,12 @@ const Contact = () => {
    const navigate = useNavigate()
    const dispatch = useDispatch()
    const main = () => {
-      navigate('/')
+      navigate('/main')
+   }
+   const { toggleState } = useSelector((state) => state.toggle)
+   const finish = () => {
+      dispatch(toggleActions.hideEdit())
+      navigate('/finish')
    }
    const experienceTips = () => {
       navigate('/experience-tips')
@@ -99,14 +105,26 @@ const Contact = () => {
                      </div>
                   </div>
 
-                  <div className={classes.buttons}>
-                     <button onClick={main} className={classes.logout}>
-                        <p>{t('contacts.logout')}</p>
-                     </button>
-                     <button className={classes.next} onClick={experienceTips}>
-                        <p>{t('contacts.next')}</p>
-                     </button>
-                  </div>
+                  {!toggleState && (
+                     <div className={classes.buttons}>
+                        <button onClick={main} className={classes.logout}>
+                           <p>{t('contacts.logout')}</p>
+                        </button>
+                        <button
+                           className={classes.next}
+                           onClick={experienceTips}
+                        >
+                           <p>{t('contacts.next')}</p>
+                        </button>
+                     </div>
+                  )}
+                  {toggleState && (
+                     <div className={classes.buttons}>
+                        <button onClick={finish} className={classes.next}>
+                           <p>{t('finish.finish')}</p>
+                        </button>
+                     </div>
+                  )}
                </div>
             </div>
             <div>

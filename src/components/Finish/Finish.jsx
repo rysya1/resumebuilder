@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Preview, print } from 'react-html2pdf'
 import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
 import { createGlobalStyle } from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import ResumePreview from '../ResumePreview/ResumePreview'
@@ -10,6 +11,8 @@ import suitcasesolid from '../../assets/icons/suitcase-solid.svg'
 import books from '../../assets/icons/bookshelf.svg'
 import menu from '../../assets/icons/menu.svg'
 import newsticker from '../../assets/icons/fiber-new.svg'
+import { toggleActions } from '../../features/toggle/toggleSlice'
+
 const GlobalStyle = createGlobalStyle`
   body{
     background: #ffffff;
@@ -17,19 +20,32 @@ const GlobalStyle = createGlobalStyle`
 `
 const Finish = () => {
    const { t } = useTranslation()
+   const dispatch = useDispatch()
    const navigate = useNavigate()
    const contact = () => {
+      dispatch(toggleActions.showEdit())
       navigate('/contact')
    }
+   const { toggleState } = useSelector((state) => state.toggle)
+   useEffect(() => {
+      localStorage.setItem('toggleState', JSON.stringify(toggleState))
+   }, [toggleState])
+
    const experience = () => {
+      dispatch(toggleActions.showEdit())
       navigate('/experience')
    }
+   
    const education = () => {
+      dispatch(toggleActions.showEdit())
       navigate('/education')
    }
+  
    const skills = () => {
+      dispatch(toggleActions.showEdit())
       navigate('/skills')
    }
+
    const download = () => {
       print('a', 'resume')
    }
@@ -76,10 +92,7 @@ const Finish = () => {
                            className={classes.all_project_pages}
                         >
                            <div className={classes.sections}>
-                              <img
-                                 src={contacts}
-                                 alt=""
-                              />
+                              <img src={contacts} alt="" />
                               <span>{t('contacts.main_text')}</span>
                            </div>
                         </div>
@@ -88,34 +101,27 @@ const Finish = () => {
                            className={classes.all_project_pages}
                         >
                            <div className={classes.sections}>
-                              <img
-                                 src={suitcasesolid}
-                                 alt=""
-                              />
+                              <img src={suitcasesolid} alt="" />
                               <span>{t('experience.main_text')}</span>
                            </div>
                         </div>
+
                         <div
                            onClick={education}
                            className={classes.all_project_pages}
                         >
                            <div className={classes.sections}>
-                              <img
-                                 src={books}
-                                 alt=""
-                              />
+                              <img src={books} alt="" />
                               <span>{t('education.main_text')}</span>
                            </div>
                         </div>
+
                         <div
                            onClick={skills}
                            className={classes.all_project_pages}
                         >
                            <div className={classes.sections}>
-                              <img
-                                 src={menu}
-                                 alt=""
-                              />
+                              <img src={menu} alt="" />
                               <span>{t('skills.main_text')}</span>
                            </div>
                         </div>
@@ -126,10 +132,7 @@ const Finish = () => {
                         {t('finish.new-resume')}
                      </span>
                      <span className={classes.icon}>
-                        <img
-                           src={newsticker}
-                           alt=""
-                        />
+                        <img src={newsticker} alt="" />
                      </span>
                   </button>
                </div>

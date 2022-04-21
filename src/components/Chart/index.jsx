@@ -30,7 +30,7 @@ const Chart = () => {
       if (pathname === '/skills') {
          setChart(80)
       }
-      if (pathname === '/finish-project') {
+      if (pathname === '/finish') {
          setChart(100)
       }
    })
