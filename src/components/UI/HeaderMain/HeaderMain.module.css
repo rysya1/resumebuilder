@@ -4,6 +4,7 @@
     border-bottom: #e7ebee solid;
 }
 .main_name{
+    cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;

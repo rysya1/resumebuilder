@@ -25,7 +25,7 @@ const Experience = () => {
    const workNameHandler = (e) => {
       dispatch(userActions.setWorkName(e.target.value))
    }
-   const EmployerHandler = (e) => {
+   const employerHandler = (e) => {
       dispatch(userActions.setEmployer(e.target.value))
    }
    const cityHandler = (e) => {
@@ -34,10 +34,10 @@ const Experience = () => {
    const stateHandler = (e) => {
       dispatch(userActions.setStateExperience(e.target.value))
    }
-   const StartDateHandler = (e) => {
+   const startDateHandler = (e) => {
       dispatch(userActions.setStartDate(e.target.value))
    }
-   const ExpirationDateHandler = (e) => {
+   const expirationDateHandler = (e) => {
       dispatch(userActions.setExpirationDate(e.target.value))
    }
    const descriptionHandler = (e) => {
@@ -60,7 +60,7 @@ const Experience = () => {
 
                   <div className={classes.pAndInput}>
                      <p>{t('experience.employer')}</p>
-                     <input type="text" onChange={EmployerHandler}/>
+                     <input type="text" onChange={employerHandler}/>
                   </div>
 
                   <div className={classes.d_flex}>
@@ -76,11 +76,11 @@ const Experience = () => {
                   <div className={classes.d_flex_date}>
                      <div>
                         <p>{t('experience.start-date')}</p>
-                        <input className={classes.date} type="date" onChange={StartDateHandler}/>
+                        <input className={classes.date} type="date" onChange={startDateHandler}/>
                      </div>
                      <div>
                         <p>{t('experience.expiration-date')}</p>
-                        <input className={classes.date} type="date" onChange={ExpirationDateHandler}/>
+                        <input className={classes.date} type="date" onChange={expirationDateHandler}/>
          
                      </div>
                   </div>

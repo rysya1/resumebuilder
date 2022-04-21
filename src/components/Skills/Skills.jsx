@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { v4 } from 'uuid'
 import { createGlobalStyle } from 'styled-components'
-import {
-   addSkill,
-   getSkillsInLocalStorege,
-} from '../../features/skill/skillSlice'
+import { addSkill } from '../../features/skill/skillSlice'
 import AddSkillsForm from '../AddSkillsForm/AddSkillsForm'
 import ResumePreview from '../ResumePreview/ResumePreview'
 import classes from './Skills.module.css'
@@ -28,7 +25,7 @@ const Skills = () => {
       navigate('/skill-tips')
    }
    const finish = () => {
-      navigate('/finish-project')
+      navigate('/finish')
    }
    const skillsChangeHandler = (e) => {
       setTitle(e.target.value)
@@ -51,7 +48,7 @@ const Skills = () => {
          <GlobalStyle />
          <div className={classes.main_container}>
             <div className={classes.container}>
-               <div className={classes.experience_text}>
+               <div className={classes.skills_text}>
                   <h1>{t('skills.main_text')}</h1>{' '}
                   <span>{t('skills.Ltsbz')}</span>
                </div>

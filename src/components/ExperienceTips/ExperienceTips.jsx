@@ -20,7 +20,6 @@ const ExperienceTips = () => {
    }
    return (
       <div>
-         {/* <HeaderMain /> */}
          <GlobalStyle />
          <div className={classes.container}>
             <h2 className={classes.live_funnel}>
@@ -31,7 +30,6 @@ const ExperienceTips = () => {
             </div>
             <ul>
                <li className={classes.tips_item}>
-                  {/* <img src="https://img.icons8.com/color/48/E74C3C/1-circle-c--v2.png"/> */}
                   <img
                      src="https://img.icons8.com/color/48/000000/1-cute.png"
                      alt=""

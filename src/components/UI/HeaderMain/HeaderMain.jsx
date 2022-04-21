@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../../../utils/i18next'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
@@ -18,6 +19,7 @@ const language = [
 ]
 
 const HeaderMain = () => {
+   const navigate = useNavigate()
    const [showLng, setShowLng] = useState(false)
    const { t, i18n } = useTranslation()
    const showLanguageHandler = () => {
@@ -27,12 +29,13 @@ const HeaderMain = () => {
       setShowLng(false)
       i18n.changeLanguage(lng)
    }
-   const isIcon = language.find((el) => el.code === i18n.resolvedLanguage)
-   // window.addEventListener('click', () => setShowLng(false))
+   const mainPage = () => {
+      navigate('/main')
+   }
    return (
       <header className={classes.header}>
          <div className={classes.header_div}>
-            <div className={classes.main_name}>
+            <div className={classes.main_name} onClick={mainPage}>
                <img
                   src="https://www.resumecoach.com/wp-content/themes/cv-wp-theme-resumecoach/library/images/logo-rc-home.png"
                   alt="РезюмеТренер"
@@ -60,18 +63,6 @@ const HeaderMain = () => {
                            {el.country}
                         </SelectItem>
                      ))}
-                     {/* <SelectItem onClick={() => languageChangeHandler('ru')}>
-                        <SelectLanguage
-                           src="https://img.icons8.com/color/48/000000/russian-federation.png"
-                           alt=""
-                        />
-                     </SelectItem>
-                     <SelectItem onClick={() => languageChangeHandler('en')}>
-                        <SelectLanguage
-                           src="https://img.icons8.com/color/48/000000/usa.png"
-                           alt=""
-                        />
-                     </SelectItem> */}
                   </SelectContainer>
                )}
             </div>

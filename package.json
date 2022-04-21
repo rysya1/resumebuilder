@@ -12,7 +12,6 @@
     "react-html2pdf": "^1.0.1",
     "react-i18next": "^11.16.6",
     "react-icons": "^4.3.1",
-    "react-intl": "^5.25.0",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",

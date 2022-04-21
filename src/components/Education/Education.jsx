@@ -52,7 +52,7 @@ const Education = () => {
          <GlobalStyle />
          <div className={classes.main_container}>
             <div className={classes.container}>
-               <div className={classes.experience_text}>
+               <div className={classes.education_text}>
                   <h1>{t('education.main_text')}</h1>
                   <span>{t('education.Ltsbz')}</span>
                </div>
@@ -73,52 +73,22 @@ const Education = () => {
                   </div>
                   <div className={classes.options}>
                      <p>{t('education.options')}</p>
-                     <select onChange={degreeHandler} name="" id="" >
-                        <option value="">
-                           {t('education.option1')}
-                        </option>
-                        <option value="">
-                           {t('education.option2')}
-                        </option>
-                        <option value="">
-                           {t('education.option3')}
-                        </option>
-                        <option value="">
-                           {t('education.option4')}
-                        </option>
-                        <option value="">
-                           {t('education.option5')}
-                        </option>
-                        <option value="">
-                           {t('education.option6')}
-                        </option>
-                        <option value="">
-                           {t('education.option7')}
-                        </option>
-                        <option value="">
-                           {t('education.option8')}
-                        </option>
-                        <option value="">
-                           {t('education.option9')}
-                        </option>
-                        <option value="">
-                           {t('education.option10')}
-                        </option>
-                        <option value="" onChange={degreeHandler}>
-                           {t('education.option11')}
-                        </option>
-                        <option value="" onChange={degreeHandler}>
-                           {t('education.option12')}
-                        </option>
-                        <option value="" onChange={degreeHandler}>
-                           {t('education.option13')}
-                        </option>
-                        <option value="" onChange={degreeHandler}>
-                           {t('education.option14')}
-                        </option>
-                        <option value="" onChange={degreeHandler}>
-                           {t('education.option15')}
-                        </option>
+                     <select onChange={degreeHandler}>
+                        <option>{t('education.option1')}</option>
+                        <option>{t('education.option2')}</option>
+                        <option>{t('education.option3')}</option>
+                        <option>{t('education.option4')}</option>
+                        <option>{t('education.option5')}</option>
+                        <option>{t('education.option6')}</option>
+                        <option>{t('education.option7')}</option>
+                        <option>{t('education.option8')}</option>
+                        <option>{t('education.option9')}</option>
+                        <option>{t('education.option10')}</option>
+                        <option>{t('education.option11')}</option>
+                        <option>{t('education.option12')}</option>
+                        <option>{t('education.option13')}</option>
+                        <option>{t('education.option14')}</option>
+                        <option>{t('education.option15')}</option>
                      </select>
                   </div>
                   <div className={classes.pAndInput}>

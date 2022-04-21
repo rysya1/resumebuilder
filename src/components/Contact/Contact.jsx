@@ -63,7 +63,7 @@ const Contact = () => {
                <div>
                   <div className={classes.pAndInput}>
                      <p>{t('contacts.name')}</p>
-                     <input maxLength="25" type="text" onChange={firstName} />
+                     <input maxLength="80" type="text" onChange={firstName} />
                   </div>
                   <div className={classes.pAndInput}>
                      <p>{t('contacts.address')}</p>

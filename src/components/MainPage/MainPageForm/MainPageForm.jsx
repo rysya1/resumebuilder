@@ -7,7 +7,6 @@ const MainPageForm = () => {
    const { t } = useTranslation()
    return (
       <div>
-         {/* <HeaderMain /> */}
          <section className={classes.container}>
             <div>
                <h1 className={classes.build_the_resume}>
@@ -47,7 +46,6 @@ const MainPageForm = () => {
                            </p>
                         </div>
                      </div>
-
                      <div className={classes.flex_start}>
                         <div>
                            <p className={classes.jumbotron__advantages__text}>

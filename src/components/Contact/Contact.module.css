@@ -25,10 +25,8 @@
    font-weight: 500;
 }
 .Ltstext {
-   /* width: 450px; */
    color: rgb(150, 155, 158);
-   display: inline-block;
-   font-family: Roboto, sans-serif;
+   width: 600px;
    font-size: 16px;
    line-height: 24px;
 }
@@ -95,6 +93,10 @@
    color: hsl(200, 5%, 12%);
    height: 45px;
    outline: none;
+}
+.Zipcode input:focus {
+   border: #6cacd7 solid 1px;
+   border-radius: 3px;
 }
 .Zipcode p {
    margin: 0;

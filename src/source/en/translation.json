@@ -113,6 +113,7 @@
       "next": "NEXT"
    },
    "finish": {
+      "new-resume":"start a new resume",
       "your-resume": "Here is your resume!",
       "download":"download",
       "summary":"SUMMARY SECTIONS"

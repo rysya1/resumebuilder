@@ -13,14 +13,20 @@
    height: 100%;
    color: #333;
 }
-.experience_text {
+.skills_text {
    line-height: 30px;
    margin-bottom: 10px;
 }
-.experience_text h1 {
+.skills_text h1 {
    font-size: 36px;
    padding-bottom: 15px;
    margin: 0;
+}
+.skills_text span {
+   color: rgb(150, 155, 158);
+   width: 600px;
+   font-size: 16px;
+   line-height: 24px;
 }
 .pAndInput {
    margin: 0;

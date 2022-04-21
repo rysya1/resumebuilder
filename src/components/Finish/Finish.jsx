@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Preview, print } from 'react-html2pdf'
 import { useTranslation } from 'react-i18next'
 import { createGlobalStyle } from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import ResumePreview from '../ResumePreview/ResumePreview'
 import classes from './Finish.module.css'
-
+import contacts from '../../assets/icons/contacts.svg'
+import suitcasesolid from '../../assets/icons/suitcase-solid.svg'
+import books from '../../assets/icons/bookshelf.svg'
+import menu from '../../assets/icons/menu.svg'
+import newsticker from '../../assets/icons/fiber-new.svg'
 const GlobalStyle = createGlobalStyle`
   body{
     background: #ffffff;
@@ -29,6 +33,19 @@ const Finish = () => {
    const download = () => {
       print('a', 'resume')
    }
+
+   const newResume = () => {
+      window.location.reload()
+      localStorage.removeItem('skills')
+      localStorage.removeItem('content')
+   }
+   const localSkills = localStorage.getItem('skills')
+   const localContent = localStorage.getItem('content')
+   useEffect(() => {
+      if (!localContent && !localSkills) {
+         navigate('/main')
+      }
+   }, [localSkills, localContent])
    return (
       <>
          <GlobalStyle />
@@ -45,6 +62,7 @@ const Finish = () => {
                   </div>
                   <div className={classes.download}>
                      <button onClick={download}>
+                        <i className="fa fa-ad"></i>
                         <span>{t('finish.download')}</span>
                      </button>
                   </div>
@@ -59,7 +77,7 @@ const Finish = () => {
                         >
                            <div className={classes.sections}>
                               <img
-                                 src="https://img.icons8.com/material-rounded/24/4bb0f6/contacts.png"
+                                 src={contacts}
                                  alt=""
                               />
                               <span>{t('contacts.main_text')}</span>
@@ -71,7 +89,7 @@ const Finish = () => {
                         >
                            <div className={classes.sections}>
                               <img
-                                 src="https://img.icons8.com/windows/24/4bb0f6/school-backpack.png"
+                                 src={suitcasesolid}
                                  alt=""
                               />
                               <span>{t('experience.main_text')}</span>
@@ -83,7 +101,7 @@ const Finish = () => {
                         >
                            <div className={classes.sections}>
                               <img
-                                 src="https://img.icons8.com/windows/24/4bb0f6/books--v2.png"
+                                 src={books}
                                  alt=""
                               />
                               <span>{t('education.main_text')}</span>
@@ -95,7 +113,7 @@ const Finish = () => {
                         >
                            <div className={classes.sections}>
                               <img
-                                 src="https://img.icons8.com/ios-filled/24/4bb0f6/menu-rounded.png"
+                                 src={menu}
                                  alt=""
                               />
                               <span>{t('skills.main_text')}</span>
@@ -103,6 +121,17 @@ const Finish = () => {
                         </div>
                      </div>
                   </div>
+                  <button className={classes.button} onClick={newResume}>
+                     <span className={classes.text}>
+                        {t('finish.new-resume')}
+                     </span>
+                     <span className={classes.icon}>
+                        <img
+                           src={newsticker}
+                           alt=""
+                        />
+                     </span>
+                  </button>
                </div>
             </div>
          </div>

@@ -6,7 +6,7 @@ const Chart = () => {
    const [chart, setChart] = useState(0)
    const { pathname } = useLocation()
    useEffect(() => {
-      if (pathname === '/') {
+      if (pathname === '/main') {
          setChart(0)
       }
       if (pathname === '/contact') {
@@ -46,7 +46,6 @@ const Chart = () => {
 const ChartStyled = styled.div`
    width: 100%;
    height: 10px;
-   /* background-color: ; */
    display: flex;
    justify-content: center;
    align-items: center;
