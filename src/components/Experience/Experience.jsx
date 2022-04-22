@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import classes from './Experience.module.css'
@@ -17,10 +17,15 @@ const Experience = () => {
    const { t } = useTranslation()
    const dispatch = useDispatch()
    const navigate = useNavigate()
-   const { toggleState } = useSelector((state) => state.toggle)
+   const [toggle, setToggle] = useState(
+      localStorage.getItem('toggleState')
+         ? JSON.parse(localStorage.getItem('toggleState'))
+         : true
+   )
    const finish = () => {
       dispatch(toggleActions.hideEdit())
       navigate('/finish')
+      setToggle()
    }
    const experienceTips = () => {
       navigate('/experience-tips')
@@ -108,7 +113,7 @@ const Experience = () => {
                      />
                   </div>
                </div>
-               {!toggleState && (
+               {toggle === true && (
                   <div className={classes.buttons}>
                      <button
                         className={classes.logout}
@@ -121,7 +126,7 @@ const Experience = () => {
                      </button>
                   </div>
                )}
-               {toggleState && (
+               {toggle === false && (
                   <div className={classes.buttons}>
                      <button onClick={finish} className={classes.next}>
                         <p>{t('finish.finish')}</p>

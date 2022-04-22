@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Preview, print } from 'react-html2pdf'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { createGlobalStyle } from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import ResumePreview from '../ResumePreview/ResumePreview'
@@ -22,25 +22,21 @@ const Finish = () => {
    const { t } = useTranslation()
    const dispatch = useDispatch()
    const navigate = useNavigate()
+
    const contact = () => {
       dispatch(toggleActions.showEdit())
       navigate('/contact')
    }
-   const { toggleState } = useSelector((state) => state.toggle)
-   useEffect(() => {
-      localStorage.setItem('toggleState', JSON.stringify(toggleState))
-   }, [toggleState])
-
    const experience = () => {
       dispatch(toggleActions.showEdit())
       navigate('/experience')
    }
-   
+
    const education = () => {
       dispatch(toggleActions.showEdit())
       navigate('/education')
    }
-  
+
    const skills = () => {
       dispatch(toggleActions.showEdit())
       navigate('/skills')
@@ -54,6 +50,7 @@ const Finish = () => {
       window.location.reload()
       localStorage.removeItem('skills')
       localStorage.removeItem('content')
+      localStorage.removeItem('toggleState')
    }
    const localSkills = localStorage.getItem('skills')
    const localContent = localStorage.getItem('content')
@@ -111,7 +108,7 @@ const Finish = () => {
                            className={classes.all_project_pages}
                         >
                            <div className={classes.sections}>
-                              <img src={books} alt="" />
+                              <img src={books} alt="book" />
                               <span>{t('education.main_text')}</span>
                            </div>
                         </div>

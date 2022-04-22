@@ -87,11 +87,15 @@
 }
 
 .buttons {
-   padding-top: 30px;
+   border-top: rgb(129, 129, 129) solid 2px;
+   position: fixed;
+   top: 640px;
+   background-color: rgb(255, 255, 255);
+   padding-top: 10px;
    width: 600px;
    display: flex;
    justify-content: space-between;
-   padding-bottom: 30px;
+   padding-bottom: 20px;
 }
 .logout {
    border-radius: 2px;

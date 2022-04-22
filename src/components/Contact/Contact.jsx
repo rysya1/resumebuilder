@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { createGlobalStyle } from 'styled-components'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import classes from './Contact.module.css'
 import ResumePreview from '../ResumePreview/ResumePreview'
 import { userActions } from '../../features/user/userSlice'
@@ -20,10 +20,15 @@ const Contact = () => {
    const main = () => {
       navigate('/main')
    }
-   const { toggleState } = useSelector((state) => state.toggle)
+   const [toggle, setToggle] = useState(
+      localStorage.getItem('toggleState')
+         ? JSON.parse(localStorage.getItem('toggleState'))
+         : true
+   )
    const finish = () => {
       dispatch(toggleActions.hideEdit())
       navigate('/finish')
+      setToggle()
    }
    const experienceTips = () => {
       navigate('/experience-tips')
@@ -105,7 +110,7 @@ const Contact = () => {
                      </div>
                   </div>
 
-                  {!toggleState && (
+                  {toggle === true && (
                      <div className={classes.buttons}>
                         <button onClick={main} className={classes.logout}>
                            <p>{t('contacts.logout')}</p>
@@ -118,7 +123,7 @@ const Contact = () => {
                         </button>
                      </div>
                   )}
-                  {toggleState && (
+                  {toggle === false && (
                      <div className={classes.buttons}>
                         <button onClick={finish} className={classes.next}>
                            <p>{t('finish.finish')}</p>

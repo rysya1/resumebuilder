@@ -1,17 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-   toggleState:JSON.parse(localStorage.getItem('skills')) || false,
+   boolean: {
+      toggleState: false,
+   },
 }
 export const toggleSlice = createSlice({
    name: 'toggle',
    initialState,
    reducers: {
       showEdit: (state) => {
-         state.toggleState = true
+         state.boolean.toggleState = true
       },
       hideEdit(state) {
-         state.toggleState = false
+         state.boolean.toggleState = false
       },
    },
 })

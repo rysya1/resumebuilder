@@ -28,7 +28,7 @@
       "Zipcode": "Postal code",
       "email": "Email",
       "phone": "Phone number",
-      "logout": "LOGOUT",
+      "logout": "BACK",
       "next": "NEXT"
    },
    "education-tips": {
@@ -37,7 +37,7 @@
       "tips_item1": "List your degrees in order of the highest degree you received.",
       "tips_item2": "If you are still in school, please provide an estimated graduation date.",
       "tips_item3": "It is optional to include any honors, awards, scholarships or professional certifications.",
-      "logout": "LOGOUT",
+      "logout": "BACK",
       "next": "NEXT"
    },
    "education": {
@@ -66,7 +66,7 @@
       "start-date": "Start date",
       "expiration-date": "Expiration date",
       "description": "Description",
-      "logout": "LOGOUT",
+      "logout": "BACK",
       "next": "NEXT"
    },
    "experience-tips": {
@@ -76,7 +76,7 @@
       "tips_item2": "This is where recruiters will look for proof that you have what it takes to get the job done.",
       "tips_item3": "It is optional to include any honors, awards, scholarships or professional certifications.",
       "tips_item4": "Let's collect information about your achievements in past jobs to complete this section.",
-      "logout": "LOGOUT",
+      "logout": "BACK",
       "next": "NEXT"
    },
    "experience": {
@@ -92,7 +92,7 @@
       "phone": "Phone number",
       "now": "I am at this job now",
       "description": "Description",
-      "logout": "LOGOUT",
+      "logout": "BACK",
       "next": "NEXT"
    },
    "skill-tips": {
@@ -100,7 +100,7 @@
       "main_text": "Skills",
       "tips_item1": "This section combines sections on work experience and education.",
       "tips_item2": "This is your chance to showcase to potential employers the skills you have acquired through your career and education.",
-      "logout": "LOGOUT",
+      "logout": "BACK",
       "next": "NEXT"
    },
    "skills": {
@@ -109,7 +109,7 @@
       "Ltstext": "Let us know who you are, how employers can contact you, and what your profession is.",
       "name": "Skills",
       "add": "ADD",
-      "logout": "LOGOUT",
+      "logout": "BACK",
       "next": "NEXT"
    },
    "finish": {

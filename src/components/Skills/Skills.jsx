@@ -21,7 +21,18 @@ const Skills = () => {
    const dispatch = useDispatch()
    const [title, setTitle] = useState('')
    const skills = useSelector((state) => state.skills.skills)
-   const { toggleState } = useSelector((state) => state.toggle)
+
+   const [toggle, setToggle] = useState(
+      localStorage.getItem('toggleState')
+         ? JSON.parse(localStorage.getItem('toggleState'))
+         : true
+   )
+
+   const finishNext = () => {
+      localStorage.setItem('toggleState', JSON.stringify(false))
+      navigate('/finish')
+      setToggle()
+   }
    const finish = () => {
       dispatch(toggleActions.hideEdit())
       navigate('/finish')
@@ -29,11 +40,8 @@ const Skills = () => {
    const skillsTips = () => {
       navigate('/skill-tips')
    }
-
-   const skillsChangeHandler = (e) => {
-      setTitle(e.target.value)
-   }
-   const submitHandler = () => {
+   const submitHandler = (e) => {
+      e.preventDefault()
       const skill = {
          id: v4(),
          text: title,
@@ -44,6 +52,10 @@ const Skills = () => {
       }
       setTitle('')
    }
+   const skillsChangeHandler = (e) => {
+      setTitle(e.target.value)
+   }
+
    return (
       <>
          <GlobalStyle />
@@ -55,20 +67,17 @@ const Skills = () => {
                </div>
                <div className={classes.pAndInput}>
                   <p>{t('skills.name')}</p>
-                  <div className={classes.d_flex}>
+                  <form className={classes.d_flex} onSubmit={submitHandler}>
                      <input
                         value={title}
                         type="text"
                         placeholder={t('skills.main_text')}
                         onChange={skillsChangeHandler}
                      />
-                     <button
-                        className={classes.buttonAdd}
-                        onClick={() => submitHandler()}
-                     >
+                     <button type="submit" className={classes.buttonAdd}>
                         <span>{t('skills.add')}</span>
                      </button>
-                  </div>
+                  </form>
                </div>
                <div className={classes.skills}>
                   {skills.map((skill) => (
@@ -76,17 +85,17 @@ const Skills = () => {
                   ))}
                </div>
 
-               {!toggleState && (
+               {toggle === true && (
                   <div className={classes.buttons}>
                      <button className={classes.logout} onClick={skillsTips}>
                         <p>{t('skills.logout')}</p>
                      </button>
-                     <button onClick={finish} className={classes.next}>
+                     <button onClick={finishNext} className={classes.next}>
                         <p>{t('skills.next')}</p>
                      </button>
                   </div>
                )}
-               {toggleState && (
+               {toggle === false && (
                   <div className={classes.buttons}>
                      <button onClick={finish} className={classes.next}>
                         <p>{t('finish.finish')}</p>

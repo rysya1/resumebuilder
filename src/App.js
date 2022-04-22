@@ -4,7 +4,6 @@ import './App.css'
 import Chart from './components/Chart'
 import Loader from './components/Loader/Loader'
 import HeaderMain from './components/UI/HeaderMain/HeaderMain'
-
 const EducationPages = React.lazy(() => import('./pages/EducationPages'))
 const ExperiencePages = React.lazy(() => import('./pages/ExperiencePages'))
 const ContactPages = React.lazy(() => import('./pages/ContactPages'))
