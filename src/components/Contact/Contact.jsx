@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import InputMask from 'react-input-mask'
 import { createGlobalStyle } from 'styled-components'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import classes from './Contact.module.css'
 import ResumePreview from '../ResumePreview/ResumePreview'
 import { userActions } from '../../features/user/userSlice'
@@ -14,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const Contact = () => {
+   const { firstName , address, city, state, postCode, elementAddress, phone } =
+      useSelector((state) => state.user.content.contacts)
    const { t } = useTranslation()
    const navigate = useNavigate()
    const dispatch = useDispatch()
@@ -34,25 +37,25 @@ const Contact = () => {
       navigate('/experience-tips')
    }
 
-   const firstName = (e) => {
+   const firstNameHandler = (e) => {
       dispatch(userActions.setFirstName(e.target.value))
    }
-   const address = (e) => {
+   const addressHandler = (e) => {
       dispatch(userActions.setAddress(e.target.value))
    }
-   const city = (e) => {
+   const cityHandler = (e) => {
       dispatch(userActions.setCity(e.target.value))
    }
-   const state = (e) => {
+   const stateHandler = (e) => {
       dispatch(userActions.setState(e.target.value))
    }
-   const postСode = (e) => {
+   const postСodeHandler = (e) => {
       dispatch(userActions.setPostСode(e.target.value))
    }
-   const elementAddress = (e) => {
+   const elementAddressHandler = (e) => {
       dispatch(userActions.setElementAddress(e.target.value))
    }
-   const phone = (e) => {
+   const phoneHandler = (e) => {
       dispatch(userActions.setPhone(e.target.value))
    }
    return (
@@ -74,39 +77,52 @@ const Contact = () => {
                <div>
                   <div className={classes.pAndInput}>
                      <p>{t('contacts.name')}</p>
-                     <input maxLength="80" type="text" onChange={firstName} />
+                     <input
+                        maxLength="61"
+                        type="text"
+                        value={firstName}
+                        onChange={firstNameHandler}
+                     />
                   </div>
                   <div className={classes.pAndInput}>
                      <p>{t('contacts.address')}</p>
-                     <input type="text" onChange={address} />
+                     <input maxLength="42" type="text" value={address} onChange={addressHandler} />
                   </div>
 
                   <div className={classes.d_flex}>
                      <div className={classes.city}>
                         <p>{t('contacts.city')}</p>
-                        <input type="text" onChange={city} />
+                        <input type="text" maxLength="42" value={city} onChange={cityHandler} />
                      </div>
                      <div className={classes.state}>
                         <p>{t('contacts.state')}</p>
-                        <input type="text" onChange={state} />
+                        <input type="text" maxLength="42" value={state} onChange={stateHandler} />
                      </div>
                      <div className={classes.Zipcode}>
                         <p>{t('contacts.Zipcode')}</p>
-                        <input type="text" onChange={postСode} />
+                        <input type="text" maxLength="42" value={postCode} onChange={postСodeHandler} />
                      </div>
                   </div>
                   <div className={classes.d_flex}>
                      <div className={classes.email}>
                         <p>{t('contacts.email')}</p>
                         <input
+                        maxLength="42"
                            required
                            type="email"
-                           onChange={elementAddress}
+                           value={elementAddress}
+                           onChange={elementAddressHandler}
                         />
                      </div>
                      <div className={classes.phone}>
                         <p>{t('contacts.phone')}</p>
-                        <input type="number" onChange={phone} />
+                        <InputMask
+                           mask={'+\\9\\9\\6\\ (999) 999 999'}
+                           type="tel"
+                           disableUnderline
+                           value={phone}
+                           onChange={phoneHandler}
+                        />
                      </div>
                   </div>
 
@@ -132,7 +148,7 @@ const Contact = () => {
                   )}
                </div>
             </div>
-            <div>
+            <div className={classes.document_contaner}>
                <ResumePreview />
             </div>
          </div>

@@ -94,15 +94,11 @@
          }
       ],
       "import/no-named-as-default": "off",
-      "prettier/prettier": [
-         "off",
-         { "singleQuote": true, "parser": "flow" },
-         {
-            "fileInfoOptions": {
-               "withNodeModules": true
-            }
-         }
-      ],
-      "import/newline-after-import": ["off"]
+      "prettier/prettier": ["off"],
+      "import/newline-after-import": ["off"],
+      "react/jsx-curly-brace-presence": ["off"],
+      "react/no-unstable-nested-components": ["off"],
+       "always": ["personal"] 
+      //  "no-else-return":["off"]
    }
 }

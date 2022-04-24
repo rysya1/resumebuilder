@@ -1,8 +1,12 @@
 .container_skill_items{
+    word-break:break-all;
+    max-width: 280px;
     padding-top: 5px;
     padding-left: 20px;
+    
 }
 .skill_items{
+    word-break:break-all;
     display: flex;
     justify-content: start;
     width:500px ;
@@ -14,7 +18,7 @@
 }
 
 .skill_items ul li{
-    
+    width: 200px;
     font-size: 14px;
     font-weight: 500;
 }

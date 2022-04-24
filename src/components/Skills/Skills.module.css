@@ -1,6 +1,13 @@
 * {
    box-sizing: border-box;
 }
+.document_container{
+	width: 650px;
+	background-color: #e2e2e2;
+	border-left: #b9b9b9 solid 10px;
+	border-right: #b9b9b9 solid 10px;
+	padding: 80px 0 100px 0;
+}
 .main_container {
    width: 100%;
    display: flex;
@@ -51,15 +58,18 @@
    font-weight: 700;
 }
 .buttons {
-   border-top: rgb(129, 129, 129) solid 2px;
    position: fixed;
    top: 640px;
    background-color: rgb(255, 255, 255);
-   padding-top: 10px;
+   width: 689.5px;
+}
+.buttons_children {
+   border-top: rgb(129, 129, 129) solid 2px;
    width: 600px;
    display: flex;
    justify-content: space-between;
-   padding-bottom: 30px;
+   padding-top: 10px;
+   padding-bottom: 55px;
 }
 .d_flex {
    display: flex;
@@ -97,6 +107,7 @@
    background-color: #fd6f6c;
 }
 .skills {
+   word-break: break-all;
    width: 600px;
    display: flex;
    flex-wrap: wrap;

@@ -1,6 +1,13 @@
 * {
 	box-sizing: border-box;
 }
+.document_contaner{
+	width: 750px;
+	background-color: #e2e2e2;
+	border-left: #b9b9b9 solid 10px;
+	border-right: #b9b9b9 solid 10px;
+	padding: 60px 0 40px 0;
+}
 .main_container{
     width: 90%;
     display: flex;

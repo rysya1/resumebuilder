@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import classes from './Experience.module.css'
@@ -15,6 +15,15 @@ const GlobalStyle = createGlobalStyle`
 `
 const Experience = () => {
    const { t } = useTranslation()
+   const {
+      workName,
+      employer,
+      cityExperience,
+      stateExperience,
+      startDate,
+      expirationDate,
+      description,
+   } = useSelector((state) => state.user.content.experience)
    const dispatch = useDispatch()
    const navigate = useNavigate()
    const [toggle, setToggle] = useState(
@@ -66,22 +75,22 @@ const Experience = () => {
                <div>
                   <div className={classes.pAndInput}>
                      <p>{t('experience.name')}</p>
-                     <input type="text" onChange={workNameHandler} />
+                     <input maxLength="48" type="text" value={workName} onChange={workNameHandler} />
                   </div>
 
                   <div className={classes.pAndInput}>
                      <p>{t('experience.employer')}</p>
-                     <input type="text" onChange={employerHandler} />
+                     <input maxLength="48" type="text" value={employer} onChange={employerHandler} />
                   </div>
 
                   <div className={classes.d_flex}>
                      <div className={classes.city}>
                         <p>{t('experience.city')}</p>
-                        <input type="text" onChange={cityHandler} />
+                        <input maxLength="48" type="text" value={cityExperience} onChange={cityHandler} />
                      </div>
                      <div className={classes.state}>
                         <p>{t('experience.state')}</p>
-                        <input type="text" onChange={stateHandler} />
+                        <input maxLength="48" type="text" value={stateExperience} onChange={stateHandler} />
                      </div>
                   </div>
                   <div className={classes.d_flex_date}>
@@ -90,6 +99,7 @@ const Experience = () => {
                         <input
                            className={classes.date}
                            type="date"
+                           value={startDate}
                            onChange={startDateHandler}
                         />
                      </div>
@@ -98,6 +108,7 @@ const Experience = () => {
                         <input
                            className={classes.date}
                            type="date"
+                           value={expirationDate}
                            onChange={expirationDateHandler}
                         />
                      </div>
@@ -105,10 +116,10 @@ const Experience = () => {
                   <div className={classes.pAndTextArea}>
                      <p>{t('experience.description')}</p>
                      <textarea
-                        name=""
-                        id=""
                         cols="30"
                         rows="10"
+                        maxLength="420"
+                        value={description}
                         onChange={descriptionHandler}
                      />
                   </div>
@@ -134,7 +145,7 @@ const Experience = () => {
                   </div>
                )}
             </div>
-            <div>
+            <div className={classes.document_contaner}>
                <ResumePreview />
             </div>
          </div>

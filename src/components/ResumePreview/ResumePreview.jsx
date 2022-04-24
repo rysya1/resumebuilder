@@ -112,15 +112,19 @@ const ResumePreview = () => {
                      <samp>{expirationDateEducation}</samp>
                      <p>{descriptionEducation}</p>
                   </div>
-                  <div className={classes.experience}>
+                  </div>
+                  <div className={classes.skills_wrapper}>
                      <div className={classes.main_text}>
                         <span>{t('skills.main_text')}</span>
                      </div>
-                     {skills.map((skill) => (
+                     <div className={classes.skill}>
+                        {skills.map((skill) => (
                         <AddSkillsResume key={skill.id} skill={skill} />
                      ))}
+                     </div>
+                     
                   </div>
-               </div>
+               
             </section>
          </div>
       </div>

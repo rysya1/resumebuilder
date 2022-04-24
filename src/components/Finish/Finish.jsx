@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Preview, print } from 'react-html2pdf'
+import React, { useEffect, useRef } from 'react'
+import { useReactToPrint } from 'react-to-print'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { createGlobalStyle } from 'styled-components'
@@ -22,7 +22,7 @@ const Finish = () => {
    const { t } = useTranslation()
    const dispatch = useDispatch()
    const navigate = useNavigate()
-
+   const componentRef = useRef()
    const contact = () => {
       dispatch(toggleActions.showEdit())
       navigate('/contact')
@@ -42,10 +42,6 @@ const Finish = () => {
       navigate('/skills')
    }
 
-   const download = () => {
-      print('a', 'resume')
-   }
-
    const newResume = () => {
       window.location.reload()
       localStorage.removeItem('skills')
@@ -59,14 +55,17 @@ const Finish = () => {
          navigate('/main')
       }
    }, [localSkills, localContent])
+   const handlePrint = useReactToPrint({
+      content: () => componentRef.current,
+    });
    return (
       <>
          <GlobalStyle />
          <div className={classes.main_container}>
-            <div>
-               <Preview className={classes.a} id="resume">
+            <div  className={classes.document_contaner}>
+               <div ref={componentRef}>
                   <ResumePreview />
-               </Preview>
+               </div>
             </div>
             <div className={classes.container}>
                <div className={classes.finish_styled}>
@@ -74,7 +73,7 @@ const Finish = () => {
                      <h1>{t('finish.your-resume')}</h1>
                   </div>
                   <div className={classes.download}>
-                     <button onClick={download}>
+                     <button onClick={handlePrint}>
                         <i className="fa fa-ad"></i>
                         <span>{t('finish.download')}</span>
                      </button>

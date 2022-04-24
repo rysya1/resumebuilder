@@ -49,6 +49,7 @@
    justify-content: space-between;
 }
 .city input {
+   padding: 16.5px 18.5px 12.5px 18.5px;
    width: 350px;
    color: hsl(200, 5%, 12%);
    height: 45px;
@@ -71,6 +72,7 @@
    font-weight: 700;
 }
 .state input {
+   padding: 16.5px 18.5px 12.5px 18.5px;
    width: 240px;
    color: hsl(200, 5%, 12%);
    height: 45px;
@@ -88,15 +90,15 @@
 }
 
 .buttons {
-    border-top: rgb(129, 129, 129) solid 2px;
-    position: fixed;
-    top: 640px;
-    background-color: rgb(255, 255, 255);
-    padding-top: 10px;
+   border-top: rgb(129, 129, 129) solid 2px;
+   position: fixed;
+   top: 640px;
+   background-color: rgb(255, 255, 255);
+   padding-top: 10px;
    width: 600px;
    display: flex;
    justify-content: space-between;
-   padding-bottom: 20px;
+   padding-bottom: 50px;
 }
 .logout {
    border-radius: 2px;
@@ -156,6 +158,14 @@
 }
 .pAndTextArea {
    margin: 0;
+   padding-bottom: 100px;
+}
+.document_contaner{
+	width: 700px;
+	background-color: #e2e2e2;
+	border-left: #b9b9b9 solid 10px;
+	border-right: #b9b9b9 solid 10px;
+	padding: 60px 0 40px 0;
 }
 .pAndTextArea textarea {
    min-height: 160px;

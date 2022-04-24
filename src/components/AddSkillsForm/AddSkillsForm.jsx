@@ -1,5 +1,5 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { removeSkill } from '../../features/skill/skillSlice'
 import classes from './AddSkillForm.module.css'
 
@@ -9,9 +9,14 @@ const AddSkillsForm = ({ skill }) => {
    const removeSkillHandler = () => {
       dispatch(removeSkill(skill.id))
    }
+
    return (
       <div className={classes.container_skill_items}>
-         <div className={classes.skill_items}>
+         <div
+           
+            draggable="true"
+            className={classes.skill_items}
+         >
             <div className={classes.icon}>
                <img
                   src="https://img.icons8.com/small/24/ffffff/expand.png"

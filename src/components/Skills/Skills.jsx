@@ -50,12 +50,13 @@ const Skills = () => {
       if (title.trim().length > 0) {
          dispatch(addSkill(skill))
       }
+
       setTitle('')
    }
    const skillsChangeHandler = (e) => {
       setTitle(e.target.value)
    }
-
+   
    return (
       <>
          <GlobalStyle />
@@ -70,6 +71,7 @@ const Skills = () => {
                   <form className={classes.d_flex} onSubmit={submitHandler}>
                      <input
                         value={title}
+                        maxLength={70}
                         type="text"
                         placeholder={t('skills.main_text')}
                         onChange={skillsChangeHandler}
@@ -81,29 +83,33 @@ const Skills = () => {
                </div>
                <div className={classes.skills}>
                   {skills.map((skill) => (
-                     <AddSkillsForm key={skill.id} skill={skill} />
+                     <AddSkillsForm  key={skill.id} skill={skill} />
                   ))}
                </div>
 
                {toggle === true && (
                   <div className={classes.buttons}>
-                     <button className={classes.logout} onClick={skillsTips}>
-                        <p>{t('skills.logout')}</p>
-                     </button>
-                     <button onClick={finishNext} className={classes.next}>
-                        <p>{t('skills.next')}</p>
-                     </button>
+                     <div className={classes.buttons_children}>
+                        <button className={classes.logout} onClick={skillsTips}>
+                           <p>{t('skills.logout')}</p>
+                        </button>
+                        <button onClick={finishNext} className={classes.next}>
+                           <p>{t('skills.next')}</p>
+                        </button>
+                     </div>
                   </div>
                )}
                {toggle === false && (
                   <div className={classes.buttons}>
-                     <button onClick={finish} className={classes.next}>
-                        <p>{t('finish.finish')}</p>
-                     </button>
+                     <div className={classes.buttons_children}>
+                        <button onClick={finish} className={classes.next}>
+                           <p>{t('finish.finish')}</p>
+                        </button>
+                     </div>
                   </div>
                )}
             </div>
-            <div>
+            <div className={classes.document_container}>
                <ResumePreview />
             </div>
          </div>

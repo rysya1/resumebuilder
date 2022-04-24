@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import classes from './Education.module.css'
@@ -15,6 +15,16 @@ const GlobalStyle = createGlobalStyle`
 `
 const Education = () => {
    const { t } = useTranslation()
+   const {
+      schoolName,
+      degree,
+      cityEducation,
+      stateEducation,
+      study,
+      startDateEducation,
+      expirationDateEducation,
+      descriptionEducation,
+   } = useSelector((state) => state.user.content.education)
    const dispatch = useDispatch()
    const navigate = useNavigate()
    const [toggle, setToggle] = useState(
@@ -70,21 +80,36 @@ const Education = () => {
                <div>
                   <div className={classes.pAndInput}>
                      <p>{t('education.name')}</p>
-                     <input type="text" onChange={schoolNameHandler} />
+                     <input
+                        maxLength="48"
+                        type="text"
+                        value={schoolName}
+                        onChange={schoolNameHandler}
+                     />
                   </div>
                   <div className={classes.d_flex}>
                      <div className={classes.city}>
                         <p>{t('education.city')}</p>
-                        <input type="text" onChange={cityHandler} />
+                        <input
+                           maxLength="48"
+                           type="text"
+                           value={cityEducation}
+                           onChange={cityHandler}
+                        />
                      </div>
                      <div className={classes.state}>
                         <p>{t('education.state')}</p>
-                        <input type="text" onChange={stateHandler} />
+                        <input
+                           maxLength="48"
+                           type="text"
+                           value={stateEducation}
+                           onChange={stateHandler}
+                        />
                      </div>
                   </div>
                   <div className={classes.options}>
                      <p>{t('education.options')}</p>
-                     <select onChange={degreeHandler}>
+                     <select value={degree} onChange={degreeHandler}>
                         <option>{t('education.option1')}</option>
                         <option>{t('education.option2')}</option>
                         <option>{t('education.option3')}</option>
@@ -104,7 +129,12 @@ const Education = () => {
                   </div>
                   <div className={classes.pAndInput}>
                      <p>{t('education.area-study')}</p>
-                     <input type="text" onChange={studyHandler} />
+                     <input
+                        maxLength="52"
+                        type="text"
+                        value={study}
+                        onChange={studyHandler}
+                     />
                   </div>
                   <div className={classes.d_flex_date}>
                      <div>
@@ -112,6 +142,7 @@ const Education = () => {
                         <input
                            className={classes.date}
                            type="date"
+                           value={startDateEducation}
                            onChange={startDateHandler}
                         />
                      </div>
@@ -120,6 +151,7 @@ const Education = () => {
                         <input
                            className={classes.date}
                            type="date"
+                           value={expirationDateEducation}
                            onChange={expirationDateHandler}
                         />
                      </div>
@@ -127,10 +159,10 @@ const Education = () => {
                   <div className={classes.pAndTextArea}>
                      <p>{t('education.description')}</p>
                      <textarea
-                        name=""
-                        id=""
+                        maxLength="420"
                         cols="30"
                         rows="10"
+                        value={descriptionEducation}
                         onChange={descriptionHandler}
                      />
                   </div>
@@ -153,7 +185,7 @@ const Education = () => {
                   </div>
                )}
             </div>
-            <div>
+            <div className={classes.document_contaner}>
                <ResumePreview />
             </div>
          </div>

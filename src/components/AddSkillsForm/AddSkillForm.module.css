@@ -6,7 +6,9 @@
 }
 .skill_items{
     display: flex;
+    flex-wrap: wrap;
     margin-left: 10px;
+    max-width: 580px;
     background-color: #26a0f4;
     border-radius: 20px;
     padding: 6px;
