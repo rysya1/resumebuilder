@@ -98,7 +98,7 @@
       "import/newline-after-import": ["off"],
       "react/jsx-curly-brace-presence": ["off"],
       "react/no-unstable-nested-components": ["off"],
-       "always": ["personal"] 
-      //  "no-else-return":["off"]
+      "object-shorthand": ["off", "always"],
+      "allowTaggedTemplates": true
    }
 }

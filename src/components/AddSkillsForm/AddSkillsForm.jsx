@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import { removeSkill } from '../../features/skill/skillSlice'
 import classes from './AddSkillForm.module.css'
 

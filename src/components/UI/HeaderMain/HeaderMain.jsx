@@ -44,11 +44,11 @@ const HeaderMain = () => {
                />
             </div>
             <div style={{ position: 'relative' }}>
-               <SelectText>
+               <SelectText onClick={showLanguageHandler}>
                   <span>{t('header.languages')}</span>
 
                   <SelectLanguage
-                     onClick={showLanguageHandler}
+                     
                      src="https://img.icons8.com/ios-glyphs/30/f42e2e/expand-arrow--v1.png"
                   />
                </SelectText>
