@@ -32,7 +32,7 @@
       "react/function-component-definition": "off",
 
       "max-len": [
-         "error",
+         "off",
          {
             "code": 100,
             "ignoreStrings": true,
@@ -40,12 +40,12 @@
             "ignoreRegExpLiterals": true
          }
       ],
-      "no-console": ["warn", { "allow": ["warn", "error"] }],
+      "no-console": ["off", { "allow": ["off", "error"] }],
 
       "react-hooks/rules-of-hooks": "off",
 
       "jsx-a11y/label-has-associated-control": [
-         "error",
+         "off",
          {
             "required": {
                "some": ["nesting", "id"]
@@ -98,7 +98,6 @@
       "import/newline-after-import": ["off"],
       "react/jsx-curly-brace-presence": ["off"],
       "react/no-unstable-nested-components": ["off"],
-      "object-shorthand": ["off", "always"],
-      "allowTaggedTemplates": true
+      "object-shorthand": ["off"]
    }
 }
